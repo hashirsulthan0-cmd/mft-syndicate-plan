@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MFT Syndicate · Business &amp; Income Plan</title>
+<meta name="description" content="MFT Syndicate – Financial Freedom. Business areas, packages and income plan.">
+<meta name="theme-color" content="#081633">
+<link rel="icon" type="image/png" href="logo-sm.png">
+<link rel="apple-touch-icon" href="logo-sm.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MFT Syndicate">
+<meta property="og:title" content="MFT Syndicate · Business & Income Plan">
+<meta property="og:description" content="Financial Freedom – business areas, packages and income plan of MFT Syndicate.">
+<meta property="og:url" content="https://hashirsulthan0-cmd.github.io/mft-syndicate-plan/">
+<meta property="og:image" content="https://hashirsulthan0-cmd.github.io/mft-syndicate-plan/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MFT Syndicate – Financial Freedom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MFT Syndicate · Business & Income Plan">
+<meta name="twitter:description" content="Financial Freedom – business areas, packages and income plan of MFT Syndicate.">
+<meta name="twitter:image" content="https://hashirsulthan0-cmd.github.io/mft-syndicate-plan/preview.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Figtree:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --night: #071430; --navy: #0d1f46;
+  --gold: #dcb56a; --gold-hi: #f6e3b0; --gold-lo: #a9793a;
+  --ivory: #f7f0e3; --mist: #d6deec;
+  --line: rgba(220,181,106,.32);
+  --display: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --sans: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--night); color: var(--ivory); font-family: var(--sans); overflow: hidden; -webkit-tap-highlight-color: transparent; user-select: none;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.viewer { height: 100%; display: flex; flex-direction: column; gap: 10px; padding: 12px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); }
+.screen { position: relative; flex: 1; min-height: 0; display: grid; place-items: center; touch-action: pan-y; }
+.frame { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(220,181,106,.14); background: var(--night); }
+.stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; }
+
+/* background */
+.bgfx { position: absolute; inset: 0; overflow: hidden; }
+.bgfx .base { position: absolute; inset: 0; background:
+  radial-gradient(1100px 760px at 80% 10%, #1d3f80 0%, transparent 70%),
+  radial-gradient(900px 700px at 6% 100%, #152f66 0%, transparent 70%),
+  linear-gradient(160deg, #0c1e45 0%, #071430 60%, #050f26 100%); }
+.orb { position: absolute; border-radius: 50%; filter: blur(60px); }
+.orb.o1 { width: 760px; height: 760px; left: 1300px; top: -120px; background: radial-gradient(circle, rgba(220,181,106,.26), rgba(220,181,106,0) 68%); }
+.orb.o2 { width: 900px; height: 900px; left: -260px; top: 520px; background: radial-gradient(circle, rgba(220,181,106,.10), rgba(220,181,106,0) 68%); }
+.chart { position: absolute; inset: 0; opacity: .55; }
+.chart .grid { stroke: rgba(214,222,236,.05); stroke-width: 1; }
+.chart .ln { fill: none; stroke: rgba(220,181,106,.22); stroke-width: 2; }
+.chart .bar { fill: rgba(220,181,106,.045); }
+.grain { position: absolute; inset: -50%; opacity: .07; mix-blend-mode: overlay; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(2,6,14,.55) 100%); pointer-events: none; }
+
+/* slide system */
+.slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility 0s linear .5s; }
+.slide.on { opacity: 1; visibility: visible; transition: opacity .5s ease; z-index: 2; }
+.slide img { display: block; max-width: none; }
+.corner-logo { position: absolute; right: 48px; top: 36px; width: 168px; height: 168px; z-index: 4; filter: drop-shadow(0 12px 28px rgba(0,0,0,.6)); }
+.head { position: absolute; left: 120px; top: 84px; right: 300px; z-index: 1; }
+.eyebrow { display: inline-flex; align-items: center; gap: 18px; font: 700 28px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.eyebrow::before { content: ""; width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.h2 { font: 900 92px/1.02 var(--display); letter-spacing: -.015em; margin: 14px 0 0; text-transform: uppercase; }
+.gold-text { background: linear-gradient(100deg, #b4843f 0%, #f6e3b0 32%, #dcb56a 52%, #fff4d2 68%, #b8873f 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+.glass { background: linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.025)); border: 1.5px solid var(--line); border-radius: 30px; }
+.ic { width: 88px; height: 88px; flex: none; border-radius: 24px; display: grid; place-items: center; background: linear-gradient(150deg, rgba(220,181,106,.30), rgba(220,181,106,.06)); border: 1.5px solid rgba(220,181,106,.5); }
+.ic svg, .sv { width: 48px; height: 48px; fill: none; stroke: var(--gold-hi); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.abs { position: absolute; }
+.foot { position: absolute; left: 120px; right: 120px; bottom: 44px; display: flex; align-items: center; justify-content: space-between; font: 600 22px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: rgba(214,222,236,.8); }
+.foot .fb { display: flex; align-items: center; gap: 14px; }
+.foot .fb::before { content: ""; width: 44px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.foot .pg b { color: var(--gold); }
+
+/* 1 cover */
+.cover-left { position: absolute; left: 130px; top: 0; bottom: 0; width: 900px; display: flex; flex-direction: column; justify-content: center; }
+.cover-title { margin: 26px 0 0; font: 900 140px/.95 var(--display); letter-spacing: -.02em; text-transform: uppercase; }
+.cover-sub { margin: 34px 0 0; font: 700 50px/1.2 var(--display); color: var(--ivory); text-transform: uppercase; letter-spacing: .02em; }
+.cover-tag { margin-top: 22px; font: 500 36px/1.3 var(--sans); color: var(--mist); }
+.pill { display: inline-flex; align-items: center; gap: 16px; margin-top: 46px; padding: 20px 34px; border-radius: 999px; font: 700 34px var(--sans); color: var(--night); background: linear-gradient(100deg, #c99a4e, #f6e3b0 50%, #d6a95c); align-self: flex-start; box-shadow: 0 14px 40px rgba(220,181,106,.25); }
+.pill svg { width: 34px; height: 34px; fill: none; stroke: var(--night); stroke-width: 2; }
+.cover-logo { position: absolute; right: 110px; top: 50%; width: 640px; height: 640px; margin-top: -320px; }
+.cover-logo .halo { position: absolute; inset: -70px; border-radius: 50%; background: radial-gradient(circle, rgba(220,181,106,.28), transparent 65%); }
+.cover-logo img { position: relative; width: 100%; height: 100%; filter: drop-shadow(0 30px 60px rgba(0,0,0,.6)); }
+
+/* 2 contents */
+.toc { position: absolute; left: 120px; right: 120px; top: 330px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.toc .it { height: 290px; padding: 34px 34px; display: flex; flex-direction: column; justify-content: space-between; }
+.toc .it em { font: 900 76px/1 var(--display); font-style: normal; }
+.toc .it b { font: 800 40px/1.15 var(--display); text-transform: uppercase; }
+
+/* 3 about */
+.about-text { position: absolute; left: 120px; top: 330px; width: 860px; font: 500 44px/1.42 var(--sans); color: var(--ivory); }
+.about-text strong { color: var(--gold-hi); font-weight: 800; }
+.lic { position: absolute; left: 120px; top: 790px; width: 860px; height: 150px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
+.lic b { display: block; font: 800 38px/1.1 var(--display); text-transform: uppercase; }
+.lic span { display: block; margin-top: 8px; font: 500 30px var(--sans); color: var(--mist); }
+.offices { position: absolute; left: 1060px; right: 120px; top: 330px; display: flex; flex-direction: column; gap: 26px; }
+.office { height: 190px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
+.office small { display: block; font: 700 24px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.office b { display: block; margin-top: 10px; font: 800 44px/1.1 var(--display); }
+
+/* 4 business areas */
+.biz { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.biz .it { height: 212px; display: flex; align-items: center; gap: 30px; padding: 0 34px; position: relative; }
+.biz .it b { font: 800 42px/1.12 var(--display); }
+.biz .it em { position: absolute; right: 26px; top: 20px; font: 800 26px var(--display); font-style: normal; color: rgba(220,181,106,.65); }
+
+/* 5 packages */
+.pk { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.pk .it { height: 520px; padding: 40px 34px; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; overflow: hidden; }
+.pk .it.top { border-color: rgba(246,227,176,.75); background: linear-gradient(160deg, rgba(220,181,106,.22), rgba(220,181,106,.05)); }
+.pk .lv { font: 700 28px var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.pk .amt { margin-top: 34px; font: 900 92px/1 var(--display); letter-spacing: -.03em; }
+.pk .hr { width: 70%; height: 2px; margin: 40px 0 34px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.pk .roi { font: 900 120px/1 var(--display); }
+.pk .rl { margin-top: 14px; font: 700 32px var(--sans); color: var(--mist); letter-spacing: .14em; text-transform: uppercase; }
+.band { position: absolute; left: 120px; right: 120px; top: 860px; height: 120px; display: flex; align-items: center; justify-content: center; gap: 30px; font: 800 46px var(--display); text-transform: uppercase; }
+.band span { color: var(--mist); font: 600 36px var(--sans); text-transform: none; }
+
+/* 6 income plan */
+.ip-col { position: absolute; top: 290px; height: 610px; padding: 36px 40px; }
+.ip-col h3 { margin: 0; display: flex; align-items: center; gap: 24px; font: 900 46px/1.05 var(--display); text-transform: uppercase; }
+.ip-col .x { position: absolute; right: 40px; top: 44px; font: 900 64px/1 var(--display); }
+.ip-list { margin: 32px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.ip-list li { display: flex; align-items: center; gap: 22px; padding: 20px 28px; border-radius: 22px; background: rgba(255,255,255,.05); border: 1px solid rgba(220,181,106,.22); font: 700 36px var(--sans); white-space: nowrap; }
+.ip-list li span { margin-left: auto; font: 800 40px var(--display); color: var(--gold-hi); }
+.ip-list li i { width: 16px; height: 16px; border-radius: 50%; background: var(--gold); flex: none; }
+.eq { position: absolute; left: 120px; right: 120px; top: 930px; text-align: center; font: 800 44px var(--display); text-transform: uppercase; }
+
+/* 7 booster */
+.big-num { position: absolute; left: 120px; top: 300px; width: 760px; height: 640px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.big-num .n { font: 900 260px/1 var(--display); letter-spacing: -.04em; }
+.big-num .l { margin-top: 20px; font: 800 52px var(--display); text-transform: uppercase; }
+.big-num .s { margin-top: 14px; font: 500 36px var(--sans); color: var(--mist); }
+.steps { position: absolute; left: 950px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 26px; }
+.step { height: 196px; display: flex; align-items: center; gap: 32px; padding: 0 38px; }
+.step small { display: block; font: 700 26px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.step b { display: block; margin-top: 10px; font: 800 52px/1.08 var(--display); }
+
+/* 8 limit flow */
+.flow { position: absolute; left: 120px; right: 120px; top: 600px; display: grid; grid-template-columns: 1fr 90px 1fr 90px 1fr; align-items: center; }
+.flow .it { height: 300px; padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 24px; text-align: center; align-items: center; }
+.flow .it b { font: 800 46px/1.12 var(--display); text-transform: uppercase; }
+.flow .ar svg { width: 90px; height: 60px; fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.limit-hero { position: absolute; left: 120px; right: 120px; top: 300px; height: 250px; display: flex; align-items: center; justify-content: center; gap: 70px; }
+.limit-hero .k { text-align: center; }
+.limit-hero .k b { display: block; font: 900 150px/1 var(--display); }
+.limit-hero .k span { display: block; margin-top: 8px; font: 700 34px var(--sans); color: var(--mist); text-transform: uppercase; letter-spacing: .12em; }
+.limit-hero .op { font: 900 90px var(--display); color: var(--gold); }
+
+/* 9 level income */
+.lvl { position: absolute; left: 120px; width: 1080px; top: 290px; display: flex; flex-direction: column; gap: 14px; }
+.lvl .row { height: 76px; display: grid; grid-template-columns: 290px 1fr 170px; align-items: center; gap: 26px; padding: 0 30px; border-radius: 20px; background: rgba(255,255,255,.05); border: 1px solid rgba(220,181,106,.24); }
+.lvl .row b { font: 800 38px var(--display); }
+.lvl .row .tr { height: 22px; border-radius: 999px; background: rgba(255,255,255,.07); overflow: hidden; }
+.lvl .row .tr i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #a9793a, #f6e3b0); }
+.lvl .row span { text-align: right; font: 900 44px var(--display); color: var(--gold-hi); }
+.lvl .row.hd { background: linear-gradient(90deg, rgba(220,181,106,.35), rgba(220,181,106,.12)); border-color: rgba(246,227,176,.6); }
+.side { position: absolute; left: 1260px; right: 120px; top: 290px; height: 690px; padding: 44px 40px; display: flex; flex-direction: column; }
+.side .q { font: 900 64px/1.05 var(--display); text-transform: uppercase; }
+.side p { margin: 28px 0 0; font: 500 38px/1.4 var(--sans); color: var(--ivory); }
+.side .tag { margin-top: auto; display: flex; align-items: center; gap: 20px; font: 800 38px var(--display); }
+
+/* 10 eligibility */
+.ladder { position: absolute; left: 120px; width: 1100px; top: 330px; height: 560px; }
+.ladder .st { position: absolute; bottom: 0; width: 58px; border-radius: 12px 12px 4px 4px; background: linear-gradient(180deg, rgba(246,227,176,.95), rgba(169,121,58,.75)); }
+.ladder .st b { position: absolute; left: 0; right: 0; top: -46px; text-align: center; font: 800 30px var(--display); color: var(--gold-hi); }
+.ladder .cap { position: absolute; left: 0; right: 0; bottom: -60px; display: flex; justify-content: space-between; font: 700 28px var(--sans); color: var(--mist); }
+.rules { position: absolute; left: 1300px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 24px; }
+.rule { padding: 32px 34px; }
+.rule .r1 { font: 900 64px/1 var(--display); }
+.rule .r2 { margin-top: 12px; font: 700 34px var(--sans); color: var(--mist); text-transform: uppercase; letter-spacing: .08em; }
+.rule.note { border-style: dashed; }
+
+/* 11 achiever */
+.ach { position: absolute; left: 120px; right: 120px; top: 360px; display: grid; grid-template-columns: 1fr 90px 1fr 90px 1fr; align-items: center; }
+.ach .it { height: 470px; padding: 40px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 26px; }
+.ach .it .ic { width: 130px; height: 130px; border-radius: 34px; }
+.ach .it .ic svg { width: 70px; height: 70px; }
+.ach .it .big { font: 900 96px/1 var(--display); }
+.ach .it b { font: 800 46px/1.12 var(--display); text-transform: uppercase; }
+.ach .it.top { border-color: rgba(246,227,176,.8); background: linear-gradient(160deg, rgba(220,181,106,.26), rgba(220,181,106,.06)); }
+.ach .ar svg { width: 90px; height: 60px; fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 12 terms */
+.terms { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.terms .it { height: 168px; display: flex; align-items: center; gap: 30px; padding: 0 36px; }
+.terms .it b { font: 700 38px/1.25 var(--sans); }
+.terms .it b strong { color: var(--gold-hi); font-weight: 800; }
+.disc { position: absolute; left: 120px; right: 120px; top: 912px; text-align: center; font: 500 30px/1.4 var(--sans); color: var(--mist); }
+
+/* 13 thanks */
+.thanks { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.thanks img { width: 420px; height: 420px; filter: drop-shadow(0 30px 60px rgba(0,0,0,.6)); }
+.thanks h2 { margin: 30px 0 0; font: 900 130px/1 var(--display); text-transform: uppercase; }
+.thanks p { margin: 22px 0 0; font: 500 42px/1.35 var(--sans); color: var(--ivory); }
+
+/* controls */
+.bar { flex: none; display: flex; align-items: center; justify-content: center; gap: 14px; }
+.btn { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.06); border: 1px solid rgba(220,181,106,.35); color: var(--gold-hi); cursor: pointer; }
+.btn:hover { background: rgba(220,181,106,.18); }
+.btn svg { width: 20px; height: 20px; fill: currentColor; }
+.track { display: flex; gap: 8px; align-items: center; }
+.dot { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 0; background: rgba(214,222,236,.28); cursor: pointer; }
+.dot.seen { background: rgba(220,181,106,.55); }
+.dot.cur { width: 26px; border-radius: 6px; background: var(--gold); }
+.count { min-width: 64px; text-align: center; font: 600 15px var(--sans); color: var(--mist); font-variant-numeric: tabular-nums; }
+.zone { position: absolute; top: 0; bottom: 0; width: 22%; z-index: 5; cursor: pointer; }
+.zone.l { left: 0; } .zone.r { right: 0; }
+@media (max-width: 640px) { .track { display: none; } }
+</style>
+</head>
+<body>
+<div class="viewer">
+  <div class="screen" id="screen">
+    <div class="frame" id="frame">
+      <div class="stage" id="stage">
+        <div class="bgfx">
+          <div class="base"></div>
+          <div class="orb o1"></div>
+          <div class="orb o2"></div>
+          <svg class="chart" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true" id="bgchart"></svg>
+          <div class="grain"></div>
+          <div class="vignette"></div>
+        </div>
+
+        <!-- 1 COVER -->
+        <section class="slide" aria-label="MFT Syndicate">
+          <div class="cover-left">
+            <div class="eyebrow">Financial Freedom</div>
+            <h1 class="cover-title"><span class="gold-text">MFT</span><br>Syndicate</h1>
+            <div class="cover-sub">Business &amp; Income Plan</div>
+            <div class="cover-tag">Nine business areas · One trusted MFT group</div>
+            <div class="pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>mftsyndicate.biz</div>
+          </div>
+          <div class="cover-logo"><div class="halo"></div><img src="logo.webp" alt="MFT Syndicate logo"></div>
+        </section>
+
+        <!-- 2 CONTENTS -->
+        <section class="slide" aria-label="Contents">
+          <div class="head"><div class="eyebrow">Inside this plan</div><h2 class="h2">Plan <span class="gold-text">Overview</span></h2></div>
+          <div class="toc" id="toc"></div>
+        </section>
+
+        <!-- 3 ABOUT -->
+        <section class="slide" aria-label="About MFT Syndicate">
+          <div class="head"><div class="eyebrow">Who we are</div><h2 class="h2">About <span class="gold-text">MFT Syndicate</span></h2></div>
+          <div class="about-text"><strong>MFT Syndicate</strong> is the business partnership platform of the <strong>MFT group</strong>, connecting members to nine business areas across <strong>India</strong> and the <strong>UAE</strong>.</div>
+          <div class="lic glass"><div class="ic" data-i="shield"></div><div><b>Registered &amp; Licensed</b><span>Licence No. — to be added</span></div></div>
+          <div class="offices">
+            <div class="office glass"><div class="ic" data-i="building"></div><div><small>Head Office · India</small><b>Panjim, Goa</b></div></div>
+            <div class="office glass"><div class="ic" data-i="pin"></div><div><small>Karnataka Head Office</small><b>Bangalore</b></div></div>
+            <div class="office glass"><div class="ic" data-i="globe"></div><div><small>International Office</small><b>Dubai, UAE</b></div></div>
+          </div>
+        </section>
+
+        <!-- 4 BUSINESS AREAS -->
+        <section class="slide" aria-label="Our business areas">
+          <div class="head"><div class="eyebrow">Where we work</div><h2 class="h2">Our Business <span class="gold-text">Areas</span></h2></div>
+          <div class="biz" id="biz"></div>
+        </section>
+
+        <!-- 5 PACKAGES -->
+        <section class="slide" aria-label="Packages">
+          <div class="head"><div class="eyebrow">Choose your package</div><h2 class="h2">Investment <span class="gold-text">Packages</span></h2></div>
+          <div class="pk" id="pk"></div>
+          <div class="band glass"><span>Total ROI limit</span><b class="gold-text">2.5X</b><span>of your package</span></div>
+        </section>
+
+        <!-- 6 INCOME PLAN -->
+        <section class="slide" aria-label="Income plan">
+          <div class="head"><div class="eyebrow">How you earn</div><h2 class="h2">Income <span class="gold-text">Plan</span></h2></div>
+          <div class="ip-col glass" style="left:120px;width:820px">
+            <h3><span class="ic" data-i="trade"></span>ROI Income</h3><div class="x gold-text">2.5X</div>
+            <ul class="ip-list">
+              <li><i></i>Starter · $100<span>3%</span></li>
+              <li><i></i>$3,000 package<span>4%</span></li>
+              <li><i></i>$6,000 package<span>5%</span></li>
+              <li><i></i>$10,000 package<span>6%</span></li>
+            </ul>
+          </div>
+          <div class="ip-col glass" style="left:980px;width:820px">
+            <h3><span class="ic" data-i="network"></span>Working Income</h3><div class="x gold-text">2.5X</div>
+            <ul class="ip-list">
+              <li><i></i>Booster Income<span>+2%</span></li>
+              <li><i></i>Level Income (ROI to ROI)<span>15 Levels</span></li>
+              <li><i></i>Profit Share<span>Achiever</span></li>
+            </ul>
+          </div>
+          <div class="eq">ROI 2.5X <span class="gold-text">+</span> Working 2.5X <span class="gold-text">=</span> <span class="gold-text">Total 5X</span></div>
+        </section>
+
+        <!-- 7 BOOSTER -->
+        <section class="slide" aria-label="Booster income">
+          <div class="head"><div class="eyebrow">Working income</div><h2 class="h2">Booster <span class="gold-text">Income</span></h2></div>
+          <div class="big-num glass"><div class="n gold-text">+2%</div><div class="l">Extra Income</div><div class="s">on top of your ROI</div></div>
+          <div class="steps">
+            <div class="step glass"><div class="ic" data-i="target"></div><div><small>Target</small><b>$20,000</b></div></div>
+            <div class="step glass"><div class="ic" data-i="cal"></div><div><small>Time</small><b>Within 1 week</b></div></div>
+            <div class="step glass"><div class="ic" data-i="rocket"></div><div><small>Reward</small><b>2% extra income</b></div></div>
+          </div>
+        </section>
+
+        <!-- 8 LIMIT -->
+        <section class="slide" aria-label="Income limit">
+          <div class="head"><div class="eyebrow">Plan limit</div><h2 class="h2">Total Income <span class="gold-text">Limit</span></h2></div>
+          <div class="limit-hero glass">
+            <div class="k"><b>2.5X</b><span>ROI</span></div><div class="op">+</div>
+            <div class="k"><b>2.5X</b><span>Working</span></div><div class="op">=</div>
+            <div class="k"><b class="gold-text">5X</b><span>Total limit</span></div>
+          </div>
+          <div class="flow">
+            <div class="it glass"><div class="ic" data-i="trade"></div><b>Earn up to 5X</b></div>
+            <div class="ar"><svg viewBox="0 0 90 60"><path d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass"><div class="ic" data-i="pause"></div><b>ID becomes inactive</b></div>
+            <div class="ar"><svg viewBox="0 0 90 60"><path d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass" style="border-color:rgba(246,227,176,.75)"><div class="ic" data-i="refresh"></div><b class="gold-text">Re-top-up is a must</b></div>
+          </div>
+        </section>
+
+        <!-- 9 LEVEL INCOME -->
+        <section class="slide" aria-label="Level income">
+          <div class="head"><div class="eyebrow">Working income</div><h2 class="h2">Level <span class="gold-text">Income</span></h2></div>
+          <div class="lvl" id="lvl"></div>
+          <div class="side glass">
+            <div class="q gold-text">ROI to ROI</div>
+            <p>Earn a share of your team's ROI income — up to <strong style="color:var(--gold-hi)">15 levels</strong> deep.</p>
+            <div class="tag"><span class="ic" data-i="layers"></span>15 Levels</div>
+          </div>
+        </section>
+
+        <!-- 10 ELIGIBILITY -->
+        <section class="slide" aria-label="Level eligibility">
+          <div class="head"><div class="eyebrow">Unlock your levels</div><h2 class="h2">Level <span class="gold-text">Eligibility</span></h2></div>
+          <div class="ladder" id="ladder"></div>
+          <div class="rules">
+            <div class="rule glass"><div class="r1 gold-text">1 Direct</div><div class="r2">= 1 level open</div></div>
+            <div class="rule glass"><div class="r1 gold-text">15 Directs</div><div class="r2">= 15 levels open</div></div>
+            <div class="rule glass note"><div class="r1" style="font-size:52px">$100 ID</div><div class="r2">Not valid</div></div>
+          </div>
+        </section>
+
+        <!-- 11 ACHIEVER -->
+        <section class="slide" aria-label="Profit share achiever">
+          <div class="head"><div class="eyebrow">Top reward</div><h2 class="h2">Profit Share · <span class="gold-text">Achiever</span></h2></div>
+          <div class="ach">
+            <div class="it glass"><div class="ic" data-i="users"></div><div class="big gold-text">15</div><b>Directs done</b></div>
+            <div class="ar"><svg viewBox="0 0 90 60"><path d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass"><div class="ic" data-i="pie"></div><b>Profit Share<br>Eligibility</b></div>
+            <div class="ar"><svg viewBox="0 0 90 60"><path d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass top"><div class="ic" data-i="crown"></div><b class="gold-text" style="font-size:66px">Achiever</b></div>
+          </div>
+        </section>
+
+        <!-- 12 TERMS -->
+        <section class="slide" aria-label="Key terms">
+          <div class="head"><div class="eyebrow">Please note</div><h2 class="h2">Key <span class="gold-text">Terms</span></h2></div>
+          <div class="terms">
+            <div class="it glass"><div class="ic" data-i="trade"></div><b>ROI income is limited to <strong>2.5X</strong> of the package</b></div>
+            <div class="it glass"><div class="ic" data-i="layers"></div><b>Total income limit is <strong>5X</strong> — then the ID becomes inactive</b></div>
+            <div class="it glass"><div class="ic" data-i="refresh"></div><b><strong>Re-top-up</strong> is a must to continue earning</b></div>
+            <div class="it glass"><div class="ic" data-i="network"></div><b>Levels open by directs: <strong>1 direct = 1 level</strong></b></div>
+            <div class="it glass"><div class="ic" data-i="user"></div><b><strong>$100 ID</strong> not valid</b></div>
+            <div class="it glass"><div class="ic" data-i="shield"></div><b>Registered &amp; licensed · <strong>Licence No. to be added</strong></b></div>
+          </div>
+          <div class="disc">All investments carry risk. Returns depend on business performance. Please read the full terms &amp; conditions before joining.</div>
+        </section>
+
+        <!-- 13 THANK YOU -->
+        <section class="slide" data-nofoot aria-label="Thank you">
+          <div class="thanks">
+            <img src="logo.webp" alt="MFT Syndicate logo">
+            <h2><span class="gold-text">Thank You</span></h2>
+            <p>Together, let's build your financial freedom.</p>
+            <div class="pill" style="align-self:center"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>mftsyndicate.biz</div>
+          </div>
+        </section>
+
+      </div>
+      <div class="zone l" id="zprev" aria-hidden="true"></div>
+      <div class="zone r" id="znext" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="bar">
+    <button class="btn" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7V5z"/></svg></button>
+    <div class="track" id="track"></div>
+    <span class="count" id="count">1 / 13</span>
+    <button class="btn" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7V5z"/></svg></button>
+    <button class="btn" id="fs" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5v2H6v3zm11-5h5v5h-2V6h-3zM4 15h2v3h3v2H4zm14 0h2v5h-5v-2h3z"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const h = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content; };
+
+  const I = {
+    plane: '<path d="M21 15.5v-2l-8-5V4a1.5 1.5 0 0 0-3 0v4.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/>',
+    cart: '<path d="M2.5 4h2.6l2.3 11h10.8l2.2-8H6.3"/><circle cx="9.5" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>',
+    goldbar: '<path d="M2.5 20l2.5-5h14l2.5 5z"/><path d="M7 15l2-4.5h6l2 4.5"/><path d="M10 6.5l.6-2M14 6.5l-.6-2M12 6V3"/>',
+    currency: '<circle cx="8.5" cy="8.5" r="5.5"/><circle cx="15.5" cy="15.5" r="5.5"/><path d="M8.5 6v5M7 7.2h2.6a1 1 0 0 1 0 2H7.4a1 1 0 0 0 0 2H10M13.5 13.5h4M13.5 15.5h4M15.5 13.5v4.5"/>',
+    ship: '<path d="M3 17l2 4h14l2-4z"/><path d="M5 17V11h14v6"/><path d="M9 11V7h6v4M12 7V3"/><path d="M2 21.5c1.5 0 1.5-.8 3-.8s1.5.8 3 .8 1.5-.8 3-.8 1.5.8 3 .8 1.5-.8 3-.8 1.5.8 3 .8"/>',
+    tag: '<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.6"/><path d="M11 13l3 3M13 11l3 3"/>',
+    mine: '<path d="M4 20l9-9"/><path d="M9 4c4-1.5 9 0 11 4-3-1.5-6.5-1.6-9 .5"/><path d="M11.5 8.5l4 4"/><path d="M15 20l2-4 2 4z" />',
+    trade: '<path d="M4 20V4M4 20h16"/><path d="M7 15l4-4 3 3 5-6"/><path d="M15 8h4v4"/>',
+    house: '<path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/>',
+    shield: '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    building: '<path d="M4 21V5l8-2v18M12 8h8v13M3 21h18"/><path d="M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2"/>',
+    pin: '<path d="M12 21s-7-7.5-7-12a7 7 0 0 1 14 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
+    network: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.2 4.6M12 11.5l5.2 4.6"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/>',
+    cal: '<rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h2M11 14h2M14 14h2M8 17h2M11 17h2"/>',
+    rocket: '<path d="M12 2.5c3.5 2.5 5 6 4.5 11l-2 2.5h-5l-2-2.5c-.5-5 1-8.5 4.5-11z"/><circle cx="12" cy="9.5" r="1.8"/><path d="M7.5 13.5L5 17.5l3.5-.7M16.5 13.5l2.5 4-3.5-.7M10.5 19l1.5 2.5 1.5-2.5"/>',
+    pause: '<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7M14 8.5v7"/>',
+    refresh: '<path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"/><path d="M4 3.5V8h4.5"/><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"/><path d="M20 20.5V16h-4.5"/>',
+    layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5" opacity=".55"/>',
+    users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/>',
+    user: '<circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/>',
+    pie: '<path d="M12 3v9h9a9 9 0 1 1-9-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>',
+    crown: '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/><path d="M5 19h14"/>',
+    box: '<path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/>',
+    star: '<path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.4l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/>',
+  };
+  const svgI = (k) => `<svg viewBox="0 0 24 24">${I[k] || ''}</svg>`;
+
+  /* background chart */
+  (function () {
+    let s = '';
+    for (let x = 0; x <= 1920; x += 160) s += `<line class="grid" x1="${x}" y1="0" x2="${x}" y2="1080"/>`;
+    for (let y = 0; y <= 1080; y += 135) s += `<line class="grid" x1="0" y1="${y}" x2="1920" y2="${y}"/>`;
+    const hs = [120, 170, 150, 230, 210, 300, 280, 380, 360, 470, 450, 560];
+    hs.forEach((v, i) => s += `<rect class="bar" x="${i * 160 + 30}" y="${1080 - v}" width="100" height="${v}"/>`);
+    let d = 'M 0 1000'; hs.forEach((v, i) => d += ` L ${i * 160 + 80} ${1080 - v - 40}`); d += ' L 1920 420';
+    s += `<path class="ln" d="${d}"/>`;
+    $('#bgchart').innerHTML = s;
+  })();
+
+  /* contents */
+  $('#toc').append(h(['About MFT Syndicate', 'Business Areas', 'Investment Packages', 'Income Plan', 'Booster Income', 'Income Limit', 'Level Income', 'Profit Share · Achiever']
+    .map((t, i) => `<div class="it glass"><em class="gold-text">0${i + 1}</em><b>${t}</b></div>`).join('')));
+
+  /* business areas */
+  $('#biz').append(h([['plane', 'Tourism'], ['cart', 'E-Commerce'], ['goldbar', 'Gold Bullion Trading'], ['currency', 'International Currency Trading'], ['ship', 'Import &amp; Export'],
+    ['tag', 'MFT Own Brand Products'], ['mine', 'Gold Mining'], ['trade', 'Forex Trading'], ['house', 'Real Estate']]
+    .map(([ic, t], i) => `<div class="it glass"><div class="ic">${svgI(ic)}</div><b>${t}</b><em>0${i + 1}</em></div>`).join('')));
+
+  /* packages */
+  $('#pk').append(h([['Starter', '$100', '3%'], ['Package 02', '$3,000', '4%'], ['Package 03', '$6,000', '5%'], ['Package 04', '$10,000', '6%']]
+    .map(([n, a, r], i) => `<div class="it glass${i === 3 ? ' top' : ''}"><div class="lv">${n}</div><div class="amt">${a}</div><div class="hr"></div><div class="roi gold-text">${r}</div><div class="rl">ROI</div></div>`).join('')));
+
+  /* level income */
+  const L = [['Level 1', 20], ['Level 2', 16], ['Level 3', 12], ['Level 4', 8], ['Level 5', 4], ['Level 6', 2], ['Level 7 – 10', 1], ['Level 11 – 15', .5]];
+  $('#lvl').append(h(L.map(([n, p], i) => `<div class="row${i === 0 ? ' hd' : ''}"><b>${n}</b><div class="tr"><i style="width:${Math.max(3, p / 20 * 100)}%"></i></div><span>${p}%</span></div>`).join('')));
+
+  /* ladder 1..15 */
+  (function () {
+    let s = '';
+    for (let i = 1; i <= 15; i++) {
+      const x = (i - 1) * 70, hh = 40 + i * 31;
+      s += `<div class="st" style="left:${x}px;height:${hh}px;opacity:${(.45 + i * .037).toFixed(2)}"><b>${i}</b></div>`;
+    }
+    s += `<div class="cap" style="width:1038px"><span>1 direct</span><span>15 directs</span></div>`;
+    $('#ladder').innerHTML = s;
+  })();
+
+  document.querySelectorAll('[data-i]').forEach(el => el.innerHTML = svgI(el.dataset.i));
+
+  /* logo + footers */
+  const slides = [...document.querySelectorAll('.slide')], N = slides.length;
+  slides.forEach((el, i) => {
+    if (i === 0 || el.hasAttribute('data-nofoot')) return;
+    el.append(h(`<img class="corner-logo" src="logo.webp" alt="MFT Syndicate logo">`));
+    el.append(h(`<div class="foot"><div class="fb">MFT Syndicate · Financial Freedom</div><div class="pg"><b>${String(i + 1).padStart(2, '0')}</b> / ${N}</div></div>`));
+  });
+
+  /* viewer */
+  const stage = $('#stage'), frame = $('#frame'), screen = $('#screen');
+  function fit() {
+    const W = screen.clientWidth, H = screen.clientHeight, k = Math.min(W / 1920, H / 1080);
+    frame.style.width = Math.floor(1920 * k) + 'px'; frame.style.height = Math.floor(1080 * k) + 'px';
+    stage.style.transform = `scale(${k})`;
+  }
+  new ResizeObserver(fit).observe(screen); fit();
+
+  const dots = slides.map((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', 'Go to slide ' + (i + 1)); b.addEventListener('click', () => go(i)); $('#track').append(b); return b; });
+  let cur = -1;
+  function go(i) {
+    i = Math.max(0, Math.min(N - 1, i));
+    if (i === cur) return;
+    if (cur >= 0) slides[cur].classList.remove('on');
+    slides[i].classList.add('on'); cur = i;
+    dots.forEach((d, k) => { d.classList.toggle('cur', k === i); d.classList.toggle('seen', k < i); });
+    $('#count').textContent = (i + 1) + ' / ' + N;
+    try { history.replaceState(null, '', i ? '#slide-' + (i + 1) : location.pathname); } catch (e) {}
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1);
+  $('#prev').addEventListener('click', prev);
+  $('#next').addEventListener('click', next);
+  $('#fs').addEventListener('click', () => {
+    const d = document, r = d.documentElement;
+    try { if (d.fullscreenElement || d.webkitFullscreenElement) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+      else { const p = (r.requestFullscreen || r.webkitRequestFullscreen).call(r); if (p && p.catch) p.catch(() => {}); } } catch (e) {}
+  });
+  let sx = null, sy = 0, swiped = false;
+  screen.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; swiped = false; });
+  screen.addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx, dy = e.clientY - sy; sx = null; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { swiped = true; dx < 0 ? next() : prev(); } });
+  $('#zprev').addEventListener('click', () => { if (!swiped) prev(); });
+  $('#znext').addEventListener('click', () => { if (!swiped) next(); });
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); prev(); }
+    else if (k === 'Home') go(0); else if (k === 'End') go(N - 1);
+    else if (k === 'f' || k === 'F') $('#fs').click();
+  });
+  const fromHash = () => { const m = /^#slide-(\d+)$/.exec(location.hash); return m ? Math.min(N, Math.max(1, +m[1])) - 1 : 0; };
+  window.addEventListener('hashchange', () => go(fromHash()));
+  go(fromHash());
+})();
+</script>
+</body>
+</html>
