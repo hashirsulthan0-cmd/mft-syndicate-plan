@@ -81,7 +81,7 @@ body { background: #040b1c; color: var(--ivory); font-family: var(--sans); overf
 .slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transform: scale(.965); transition: opacity .55s ease, transform .7s cubic-bezier(.4,0,.2,1), visibility 0s linear .7s; }
 .slide.on { opacity: 1; visibility: visible; transform: none; transition: opacity .6s ease .1s, transform 1s cubic-bezier(.16,1,.3,1) .05s; z-index: 2; }
 .slide img { display: block; max-width: none; }
-.corner-logo { position: absolute; right: 48px; top: 36px; width: 170px; height: 170px; z-index: 4; }
+.corner-logo { position: absolute; right: 52px; top: 44px; width: 132px; height: 132px; z-index: 4; }
 .corner-logo img { width: 100%; height: 100%; filter: drop-shadow(0 12px 28px rgba(0,0,0,.6)); }
 .corner-logo::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 1.5px dashed rgba(246,227,176,.35); animation: rot 26s linear infinite; }
 .head { position: absolute; left: 120px; top: 84px; right: 300px; z-index: 1; }
@@ -164,130 +164,140 @@ body { background: #040b1c; color: var(--ivory); font-family: var(--sans); overf
 .cover-logo .lg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 38%, rgba(255,248,220,.55) 50%, transparent 62%); background-size: 300% 100%; animation: sweep 4.5s ease-in-out infinite 2s; mix-blend-mode: overlay; }
 @keyframes sweep { 0% { background-position: 130% 0; } 45%, 100% { background-position: -40% 0; } }
 
-/* ================= 2 contents ================= */
-.toc { position: absolute; left: 120px; right: 120px; top: 330px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-.toc .it { height: 290px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; }
-.toc .it em { font: 900 80px/1 var(--display); font-style: normal; }
-.toc .it b { font: 800 40px/1.15 var(--display); text-transform: uppercase; }
-.toc .it .ar { position: absolute; right: 30px; top: 40px; width: 44px; height: 44px; fill: none; stroke: rgba(246,227,176,.6); stroke-width: 2; }
+/* ================= 2 details ================= */
+.det { position: absolute; left: 120px; right: 120px; top: 290px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; }
+.det .it { height: 150px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
+.det .it em { font: 900 54px/1 var(--display); font-style: normal; width: 76px; flex: none; }
+.det .it b { font: 800 44px/1.1 var(--display); text-transform: uppercase; }
+.det .it .ic { margin-left: auto; width: 84px; height: 84px; }
+.det .brandcell { display: flex; align-items: center; justify-content: center; gap: 26px; border-style: dashed; }
+.det .brandcell img { width: 112px; height: 112px; }
+.det .brandcell span { font: 800 30px/1.2 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-hi); }
 
-/* ================= 3 about ================= */
-.about-text { position: absolute; left: 120px; top: 320px; width: 860px; font: 500 46px/1.42 var(--sans); }
-.about-text strong { color: var(--gold-hi); font-weight: 800; }
-.lic { position: absolute; left: 120px; top: 780px; width: 860px; height: 160px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
-.lic b { display: block; font: 800 40px/1.1 var(--display); text-transform: uppercase; }
-.lic span { display: block; margin-top: 8px; font: 500 30px var(--sans); color: var(--mist); }
-.lic .seal { margin-left: auto; width: 110px; height: 110px; flex: none; animation: rot 18s linear infinite; }
-.lic .seal text { font: 700 13px var(--sans); letter-spacing: .3em; fill: var(--gold); }
-.offices { position: absolute; left: 1060px; right: 120px; top: 320px; display: flex; flex-direction: column; gap: 26px; }
-.office { height: 196px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
-.office small { display: block; font: 700 24px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
-.office b { display: block; margin-top: 10px; font: 800 46px/1.1 var(--display); }
+/* ================= 3 usdt ================= */
+.coinwrap { position: absolute; left: 150px; top: 300px; width: 620px; height: 620px; }
+.coinwrap .orbit { position: absolute; border-radius: 50%; border: 1.5px dashed rgba(246,227,176,.35); }
+.coinwrap .o1 { inset: 0; animation: rot 30s linear infinite; }
+.coinwrap .o2 { inset: 60px; border-style: solid; border-color: rgba(246,227,176,.18); animation: rot 20s linear infinite reverse; }
+.coinwrap .sat { position: absolute; left: 50%; top: -14px; width: 28px; height: 28px; margin-left: -14px; border-radius: 50%; background: var(--gold-hi); box-shadow: 0 0 20px rgba(246,227,176,.9); }
+.coin3d { position: absolute; left: 130px; top: 130px; width: 360px; height: 360px; animation: coinspin 6s ease-in-out infinite; }
+@keyframes coinspin { 0%, 100% { transform: perspective(900px) rotateY(-28deg); } 50% { transform: perspective(900px) rotateY(28deg); } }
+.coin3d .face { position: absolute; inset: 0; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, #fff1c9, #dcb56a 45%, #8a5f26 100%); box-shadow: inset 0 0 0 14px rgba(255,240,200,.35), inset 0 0 0 22px rgba(120,80,30,.35), 0 30px 70px rgba(0,0,0,.55), 0 0 80px rgba(220,181,106,.35); }
+.coin3d .face b { font: 900 190px/1 var(--display); color: #2a1a05; text-shadow: 0 2px 0 rgba(255,240,200,.6); }
+.coinwrap .tag { position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); padding: 14px 36px; border-radius: 999px; font: 900 40px var(--display); letter-spacing: .12em; color: var(--night); background: linear-gradient(100deg, #c99a4e, #f6e3b0 50%, #d6a95c); box-shadow: 0 14px 40px rgba(220,181,106,.3); }
+.feat { position: absolute; left: 900px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 26px; }
+.feat .it { height: 196px; display: flex; align-items: center; gap: 32px; padding: 0 38px; }
+.feat .it small { display: block; font: 700 26px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.feat .it b { display: block; margin-top: 10px; font: 800 50px/1.08 var(--display); }
 
-/* ================= 4 business areas ================= */
-.biz { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.biz .it { height: 212px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
-.biz .it b { font: 800 42px/1.12 var(--display); }
-.biz .it em { position: absolute; right: 26px; top: 20px; font: 800 26px var(--display); font-style: normal; color: rgba(220,181,106,.7); }
+/* ================= 4 packages table ================= */
+.ptab { position: absolute; left: 120px; right: 120px; top: 290px; display: flex; flex-direction: column; gap: 14px; }
+.ptab .row { height: 104px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; align-items: center; padding: 0 44px; border-radius: 24px; background: rgba(255,255,255,.055); border: 1.5px solid rgba(220,181,106,.26); position: relative; overflow: hidden; }
+.ptab .row.th { height: 86px; background: linear-gradient(90deg, rgba(220,181,106,.45), rgba(220,181,106,.15)); border-color: rgba(246,227,176,.7); font: 800 34px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ivory); }
+.ptab .row .nm { display: flex; align-items: center; gap: 26px; font: 900 52px var(--display); text-transform: uppercase; }
+.ptab .row .nm svg { width: 70px; height: 70px; flex: none; }
+.ptab .row .am { font: 900 56px var(--display); font-variant-numeric: tabular-nums; }
+.ptab .row .pc { font: 900 64px var(--display); font-variant-numeric: tabular-nums; }
+.ptab .row.top { border-color: rgba(246,227,176,.85); background: linear-gradient(90deg, rgba(220,181,106,.26), rgba(220,181,106,.06)); }
+.slide.on .ptab .row.top { animation: left .9s cubic-bezier(.2,.8,.2,1) var(--d) both, glow 3s ease-in-out 2.6s infinite; }
+.ptab .row .bar { position: absolute; left: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, #a9793a, #f6e3b0); transform-origin: left; }
 
-/* ================= 5 packages ================= */
-.pk { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
-.pk .it { height: 530px; padding: 36px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.pk .it.top { border-color: rgba(246,227,176,.8); background: linear-gradient(160deg, rgba(220,181,106,.24), rgba(220,181,106,.05)); }
-.slide.on .pk .it.top { animation: up .9s cubic-bezier(.2,.8,.2,1) var(--d) both, glow 3s ease-in-out 2.4s infinite; }
-.pk .badge { position: absolute; top: 30px; right: -50px; transform: rotate(40deg); width: 210px; padding: 8px 0; text-align: center; font: 800 17px var(--sans); letter-spacing: .14em; color: var(--night); background: linear-gradient(90deg, #c99a4e, #f6e3b0, #d6a95c); }
-.pk .lv { font: 900 44px var(--display); letter-spacing: .04em; text-transform: uppercase; }
-.pk .ti { width: 84px; height: 84px; margin-bottom: 16px; }
-.pk .ti svg { width: 100%; height: 100%; }
-.pk .amt { margin-top: 18px; font: 900 64px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-.pk .hr { width: 70%; height: 2px; margin: 28px 0 24px; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform-origin: center; }
-.pk .roi { font: 900 112px/1 var(--display); font-variant-numeric: tabular-nums; }
-.pk .rl { margin-top: 10px; font: 700 30px var(--sans); color: var(--mist); letter-spacing: .14em; text-transform: uppercase; }
-.pk .meter { position: absolute; left: 24px; right: 24px; bottom: 30px; height: 10px; border-radius: 6px; background: rgba(255,255,255,.07); overflow: hidden; }
-.pk .meter i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #a9793a, #f6e3b0); transform-origin: left; }
-.band { position: absolute; left: 120px; right: 120px; top: 868px; height: 112px; display: flex; align-items: center; justify-content: center; gap: 30px; font: 800 48px var(--display); text-transform: uppercase; }
-.band span { color: var(--mist); font: 600 36px var(--sans); text-transform: none; }
+/* ================= 5 income plan stairs ================= */
+.stairs { position: absolute; left: 120px; right: 120px; top: 270px; height: 700px; }
+.stairs .it { position: absolute; bottom: 0; width: 316px; padding: 30px 26px; display: flex; flex-direction: column; gap: 18px; }
+.stairs .it em { font: 900 50px/1 var(--display); font-style: normal; }
+.stairs .it b { font: 800 40px/1.12 var(--display); text-transform: uppercase; }
+.stairs .it .ic { width: 84px; height: 84px; }
+.stairs .it.top { border-color: rgba(246,227,176,.85); background: linear-gradient(160deg, rgba(220,181,106,.26), rgba(220,181,106,.06)); }
+.stairs svg.path { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.stairs svg.path path { fill: none; stroke: var(--gold-hi); stroke-width: 3; stroke-dasharray: 2 0; opacity: .55; }
 
-/* ================= 6 income plan ================= */
-.ip-col { position: absolute; top: 290px; height: 610px; padding: 36px 40px; }
-.ip-col h3 { margin: 0; display: flex; align-items: center; gap: 24px; font: 900 46px/1.05 var(--display); text-transform: uppercase; }
-.ip-col .x { position: absolute; right: 40px; top: 44px; font: 900 64px/1 var(--display); }
-.ip-list { margin: 28px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
-.ip-list li { display: flex; align-items: center; gap: 22px; padding: 14px 28px; border-radius: 22px; background: rgba(255,255,255,.05); border: 1px solid rgba(220,181,106,.22); font: 700 34px var(--sans); white-space: nowrap; }
-.ip-list li span { margin-left: auto; font: 800 40px var(--display); color: var(--gold-hi); }
-.ip-list li i { width: 16px; height: 16px; border-radius: 50%; background: var(--gold); flex: none; box-shadow: 0 0 12px rgba(246,227,176,.8); }
-.eq { position: absolute; left: 120px; right: 120px; top: 930px; text-align: center; font: 800 44px var(--display); text-transform: uppercase; }
+/* ================= 6 monthly income gauge ================= */
+.gauge { position: absolute; left: 50%; top: 300px; width: 1100px; height: 560px; margin-left: -550px; }
+.gauge svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.gauge .trk { fill: none; stroke: rgba(255,255,255,.12); stroke-width: 46; stroke-linecap: round; }
+.gauge .val { fill: none; stroke: url(#gg); stroke-width: 46; stroke-linecap: round; filter: drop-shadow(0 0 18px rgba(246,227,176,.55)); }
+.gauge .tick { stroke: rgba(246,227,176,.35); stroke-width: 3; }
+.gauge .read { position: absolute; left: 0; right: 0; top: 210px; text-align: center; }
+.gauge .read b { display: block; font: 900 170px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.gauge .read span { display: block; margin-top: 18px; font: 800 52px var(--display); text-transform: uppercase; letter-spacing: .06em; }
+.gauge .ends { position: absolute; left: 0; right: 0; top: 590px; display: flex; justify-content: space-between; padding: 0 10px; font: 800 40px var(--display); color: var(--gold-hi); }
 
-/* ================= 7 booster ================= */
-.big-num { position: absolute; left: 120px; top: 300px; width: 760px; height: 640px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.big-num .burst { position: absolute; left: 50%; top: 44%; width: 520px; height: 520px; margin: -260px 0 0 -260px; animation: rot 30s linear infinite; opacity: .6; }
-.big-num .burst line { stroke: rgba(246,227,176,.35); stroke-width: 2; stroke-linecap: round; }
-.big-num .n { position: relative; font: 900 260px/1 var(--display); letter-spacing: -.04em; }
-.big-num .l { position: relative; margin-top: 20px; font: 800 52px var(--display); text-transform: uppercase; }
-.big-num .s { position: relative; margin-top: 14px; font: 500 36px var(--sans); color: var(--mist); }
-.steps { position: absolute; left: 950px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 26px; }
-.step { height: 196px; display: flex; align-items: center; gap: 32px; padding: 0 38px; }
-.step small { display: block; font: 700 26px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
-.step b { display: block; margin-top: 10px; font: 800 52px/1.08 var(--display); }
-.rk { display: grid; animation: bob 2.6s ease-in-out infinite; }
+/* ================= 7 booster tiers ================= */
+.rocketbox { position: absolute; left: 120px; top: 300px; width: 560px; height: 640px; display: grid; place-items: center; }
+.rocketbox .burst { position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; margin: -260px 0 0 -260px; animation: rot 30s linear infinite; opacity: .55; }
+.rocketbox .burst line { stroke: rgba(246,227,176,.35); stroke-width: 2; stroke-linecap: round; }
+.rocketbox .rk2 { position: relative; width: 300px; height: 300px; animation: bob 2.6s ease-in-out infinite; }
+.rocketbox .rk2 svg { width: 100%; height: 100%; fill: none; stroke: var(--gold-hi); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 20px rgba(246,227,176,.5)); }
+.rocketbox .lbl { position: absolute; bottom: 40px; font: 800 40px var(--display); text-transform: uppercase; letter-spacing: .06em; }
+.tiers { position: absolute; left: 740px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 26px; }
+.tiers .it { height: 196px; display: grid; grid-template-columns: 1fr 90px 220px; align-items: center; padding: 0 40px; }
+.tiers .it small { display: block; font: 700 26px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.tiers .it b { display: block; margin-top: 8px; font: 900 72px/1 var(--display); font-variant-numeric: tabular-nums; }
+.tiers .it .pc { text-align: right; font: 900 84px/1 var(--display); font-variant-numeric: tabular-nums; }
+.tiers .it.top { border-color: rgba(246,227,176,.85); background: linear-gradient(90deg, rgba(220,181,106,.24), rgba(220,181,106,.05)); }
 
-/* ================= 8 limit ================= */
-.limit-hero { position: absolute; left: 120px; right: 120px; top: 300px; height: 250px; display: flex; align-items: center; justify-content: center; gap: 70px; }
-.limit-hero .k { text-align: center; }
-.limit-hero .k b { display: block; font: 900 150px/1 var(--display); font-variant-numeric: tabular-nums; }
-.limit-hero .k span { display: block; margin-top: 8px; font: 700 34px var(--sans); color: var(--mist); text-transform: uppercase; letter-spacing: .12em; }
-.limit-hero .op { font: 900 90px var(--display); color: var(--gold); }
-.flow { position: absolute; left: 120px; right: 120px; top: 600px; display: grid; grid-template-columns: 1fr 90px 1fr 90px 1fr; align-items: center; }
-.flow .it { height: 300px; padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 24px; text-align: center; align-items: center; }
-.flow .it b { font: 800 46px/1.12 var(--display); text-transform: uppercase; }
-.arw svg { width: 90px; height: 60px; fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
-
-/* ================= 9 level income ================= */
-.lvl { position: absolute; left: 120px; width: 1080px; top: 290px; display: flex; flex-direction: column; gap: 14px; }
-.lvl .row { height: 76px; display: grid; grid-template-columns: 290px 1fr 170px; align-items: center; gap: 26px; padding: 0 30px; border-radius: 20px; background: rgba(255,255,255,.05); border: 1px solid rgba(220,181,106,.24); }
-.lvl .row b { font: 800 38px var(--display); }
+/* ================= 8 level income ================= */
+.elig { position: absolute; left: 120px; width: 600px; top: 290px; display: flex; flex-direction: column; gap: 24px; }
+.elig .it { padding: 34px 36px; }
+.elig .it .r1 { font: 900 60px/1 var(--display); }
+.elig .it .r2 { margin-top: 12px; font: 700 34px var(--sans); color: var(--mist); text-transform: uppercase; letter-spacing: .06em; }
+.elig .it .min { display: inline-block; margin-top: 18px; padding: 10px 22px; border-radius: 999px; font: 800 30px var(--sans); color: var(--night); background: linear-gradient(100deg, #c99a4e, #f6e3b0 50%, #d6a95c); }
+.lvl { position: absolute; left: 770px; right: 120px; top: 290px; display: flex; flex-direction: column; gap: 12px; }
+.lvl .row { height: 76px; display: grid; grid-template-columns: 270px 1fr 150px; align-items: center; gap: 24px; padding: 0 28px; border-radius: 20px; background: rgba(255,255,255,.05); border: 1px solid rgba(220,181,106,.24); }
+.lvl .row b { font: 800 36px var(--display); }
 .lvl .row .tr { height: 22px; border-radius: 999px; background: rgba(255,255,255,.07); overflow: hidden; }
 .lvl .row .tr i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #a9793a, #f6e3b0); transform-origin: left; box-shadow: 0 0 16px rgba(246,227,176,.5); }
-.lvl .row span { text-align: right; font: 900 44px var(--display); color: var(--gold-hi); font-variant-numeric: tabular-nums; }
+.lvl .row span { text-align: right; font: 900 42px var(--display); color: var(--gold-hi); font-variant-numeric: tabular-nums; }
 .lvl .row.hd { background: linear-gradient(90deg, rgba(220,181,106,.35), rgba(220,181,106,.12)); border-color: rgba(246,227,176,.6); }
-.side { position: absolute; left: 1260px; right: 120px; top: 290px; height: 690px; padding: 44px 40px; display: flex; flex-direction: column; }
-.side .q { font: 900 66px/1.05 var(--display); text-transform: uppercase; }
-.side p { margin: 28px 0 0; font: 500 38px/1.4 var(--sans); }
-.side .net { margin: auto 0 0; height: 230px; }
-.side .net line { stroke: rgba(246,227,176,.45); stroke-width: 2; }
-.side .net circle { fill: var(--gold); }
 
-/* ================= 10 eligibility ================= */
-.ladder { position: absolute; left: 120px; width: 1100px; top: 330px; height: 560px; }
-.ladder .st { position: absolute; bottom: 0; width: 58px; border-radius: 12px 12px 4px 4px; background: linear-gradient(180deg, rgba(246,227,176,.95), rgba(169,121,58,.75)); transform-origin: bottom; box-shadow: 0 0 24px rgba(220,181,106,.25); }
-.ladder .st b { position: absolute; left: 0; right: 0; top: -46px; text-align: center; font: 800 30px var(--display); color: var(--gold-hi); }
-.ladder .cap { position: absolute; left: 0; width: 1038px; bottom: -60px; display: flex; justify-content: space-between; font: 700 28px var(--sans); color: var(--mist); }
-.ladder svg.lk { position: absolute; left: 0; top: 0; width: 1100px; height: 560px; overflow: visible; }
-.ladder svg.lk path { fill: none; stroke: var(--gold-hi); stroke-width: 3; opacity: .6; }
-.rules { position: absolute; left: 1300px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 24px; }
-.rule { padding: 32px 34px; }
-.rule .r1 { font: 900 64px/1 var(--display); }
-.rule .r2 { margin-top: 12px; font: 700 34px var(--sans); color: var(--mist); text-transform: uppercase; letter-spacing: .08em; }
-.rule.note { border-style: dashed; }
-
-/* ================= 11 achiever ================= */
-.ach { position: absolute; left: 120px; right: 120px; top: 360px; display: grid; grid-template-columns: 1fr 90px 1fr 90px 1fr; align-items: center; }
-.ach .it { height: 480px; padding: 40px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 26px; }
+/* ================= 9 profit sharing ================= */
+.ach { position: absolute; left: 120px; right: 120px; top: 340px; display: grid; grid-template-columns: 1fr 90px 1fr 90px 1.15fr; align-items: center; }
+.ach .it { height: 500px; padding: 40px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 26px; }
 .ach .it .ic { width: 130px; height: 130px; border-radius: 34px; }
 .ach .it .ic svg { width: 70px; height: 70px; }
-.ach .it .big { font: 900 104px/1 var(--display); }
+.ach .it .big { font: 900 120px/1 var(--display); }
 .ach .it b { font: 800 46px/1.12 var(--display); text-transform: uppercase; }
 .ach .it.top { border-color: rgba(246,227,176,.8); background: linear-gradient(160deg, rgba(220,181,106,.26), rgba(220,181,106,.06)); }
 .slide.on .ach .it.top { animation: pop .8s ease-out var(--d) both, glow 3s ease-in-out 2.6s infinite; }
-.ach .rays { position: absolute; left: 50%; top: 38%; width: 420px; height: 420px; margin: -210px 0 0 -210px; animation: rot 24s linear infinite; opacity: .5; }
+.ach .rays { position: absolute; left: 50%; top: 40%; width: 440px; height: 440px; margin: -220px 0 0 -220px; animation: rot 24s linear infinite; opacity: .5; }
 .ach .rays line { stroke: rgba(246,227,176,.4); stroke-width: 2; stroke-linecap: round; }
 
-/* ================= 12 terms ================= */
-.terms { position: absolute; left: 120px; right: 120px; top: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-.terms .it { height: 168px; display: flex; align-items: center; gap: 30px; padding: 0 36px; }
-.terms .it b { font: 700 38px/1.25 var(--sans); }
-.terms .it b strong { color: var(--gold-hi); font-weight: 800; }
-.disc { position: absolute; left: 120px; right: 120px; top: 912px; text-align: center; font: 500 30px/1.4 var(--sans); color: var(--mist); }
+/* ================= 10 withdrawal ================= */
+.wd { position: absolute; left: 120px; right: 120px; top: 290px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.wd .it { height: 300px; padding: 40px 44px; display: flex; flex-direction: column; justify-content: space-between; }
+.wd .it .tp { display: flex; align-items: center; justify-content: space-between; }
+.wd .it small { font: 700 30px var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.wd .it b { font: 900 120px/1 var(--display); font-variant-numeric: tabular-nums; }
+.wd .it b.sm { font-size: 84px; }
+
+/* ================= 11 ID & limits ================= */
+.lim2 { position: absolute; left: 120px; right: 120px; top: 290px; height: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.lim2 .it { display: flex; align-items: center; gap: 40px; padding: 0 50px; }
+.lim2 .it b { font: 900 170px/1 var(--display); font-variant-numeric: tabular-nums; }
+.lim2 .it span { font: 800 46px/1.15 var(--display); text-transform: uppercase; }
+.lim2 .it.top { border-color: rgba(246,227,176,.85); background: linear-gradient(160deg, rgba(220,181,106,.24), rgba(220,181,106,.05)); }
+.flow { position: absolute; left: 120px; right: 120px; top: 640px; display: grid; grid-template-columns: 1fr 90px 1fr 90px 1fr; align-items: center; }
+.flow .it { height: 300px; padding: 36px; display: flex; flex-direction: column; justify-content: center; gap: 24px; text-align: center; align-items: center; }
+.flow .it b { font: 800 44px/1.12 var(--display); text-transform: uppercase; }
+.arw svg { width: 90px; height: 60px; fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
+
+/* ================= 12 company details ================= */
+.about-text { position: absolute; left: 120px; top: 300px; width: 900px; font: 500 44px/1.4 var(--sans); }
+.about-text strong { color: var(--gold-hi); font-weight: 800; }
+.chips { position: absolute; left: 120px; width: 920px; top: 540px; display: flex; flex-wrap: wrap; gap: 16px; }
+.chips span { display: inline-flex; align-items: center; gap: 12px; padding: 11px 20px; border-radius: 999px; border: 1.5px solid rgba(246,227,176,.45); background: rgba(220,181,106,.08); font: 700 25px var(--sans); }
+.chips .sv { width: 30px; height: 30px; }
+.lic { position: absolute; left: 120px; top: 840px; width: 900px; height: 130px; display: flex; align-items: center; gap: 28px; padding: 0 30px; }
+.lic b { display: block; font: 800 36px/1.1 var(--display); text-transform: uppercase; }
+.lic span { display: block; margin-top: 6px; font: 500 28px var(--sans); color: var(--mist); }
+.lic .seal { margin-left: auto; width: 100px; height: 100px; flex: none; animation: rot 18s linear infinite; }
+.lic .seal text { font: 700 13px var(--sans); letter-spacing: .3em; fill: var(--gold); }
+.offices { position: absolute; left: 1100px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 24px; }
+.office { height: 180px; display: flex; align-items: center; gap: 30px; padding: 0 34px; }
+.office small { display: block; font: 700 24px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.office b { display: block; margin-top: 10px; font: 800 46px/1.1 var(--display); }
+.disc { position: absolute; left: 1100px; right: 120px; top: 900px; font: 500 24px/1.4 var(--sans); color: var(--mist); }
 
 /* ================= 13 thanks ================= */
 .thanks { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
@@ -380,133 +390,117 @@ body { background: #040b1c; color: var(--ivory); font-family: var(--sans); overf
           </div>
         </section>
 
-        <!-- 2 CONTENTS -->
-        <section class="slide" data-glow="1250,-200,-250,600" aria-label="Contents">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Inside this plan</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Plan <span class="gold-text">Overview</span></span></span></h2></div>
-          <div class="toc" id="toc"></div>
+                <!-- 2 DETAILS -->
+        <section class="slide" data-glow="1250,-200,-250,600" aria-label="Details">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">What's inside</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s"><span class="gold-text">Details</span></span></span></h2></div>
+          <div class="det" id="det"></div>
         </section>
 
-        <!-- 3 ABOUT -->
-        <section class="slide" data-glow="300,-250,1100,500" aria-label="About MFT Syndicate">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Who we are</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">About <span class="gold-text">MFT Syndicate</span></span></span></h2></div>
-          <div class="about-text a-blur" style="--d:.5s"><strong>MFT Syndicate</strong> is the business partnership platform of the <strong>MFT group</strong>, connecting members to nine business areas across <strong>India</strong> and the <strong>UAE</strong>.</div>
-          <div class="lic glass a-up" style="--d:1.1s"><div class="ic" data-i="shield"></div><div><b>Registered &amp; Licensed</b><span>Licence No. — to be added</span></div>
+        <!-- 3 USDT PAYMENT -->
+        <section class="slide" data-glow="100,-150,1200,500" aria-label="USDT payment">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Pay &amp; earn in crypto</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">USDT <span class="gold-text">Payment</span></span></span></h2></div>
+          <div class="coinwrap a-zoom" style="--d:.4s">
+            <div class="orbit o1"><div class="sat"></div></div><div class="orbit o2"></div>
+            <div class="coin3d"><div class="face"><b>₮</b></div></div>
+            <div class="tag a-pop" style="--d:1s">USDT</div>
+          </div>
+          <div class="feat">
+            <div class="it glass a-right" style="--d:.7s"><div class="ic" data-i="currency"></div><div><small>Transactions</small><b>USDT Payment</b></div></div>
+            <div class="it glass a-right" style="--d:.9s"><div class="ic" data-i="chain"></div><div><small>Blockchain</small><b>BSC Scan</b></div></div>
+            <div class="it glass a-right" style="--d:1.1s;border-color:rgba(246,227,176,.75)"><div class="ic" data-i="infinity"></div><div><small>Growth</small><b class="gold-text">Unlimited Earning Opportunity</b></div></div>
+          </div>
+        </section>
+
+        <!-- 4 PACKAGES -->
+        <section class="slide" data-glow="800,-300,-250,600" aria-label="Packages">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Choose your package</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s"><span class="gold-text">Packages</span></span></span></h2></div>
+          <div class="ptab" id="ptab"></div>
+        </section>
+
+        <!-- 5 INCOME PLAN -->
+        <section class="slide" data-glow="1250,-150,-200,600" aria-label="Income plan">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">How you earn</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Income <span class="gold-text">Plan</span></span></span></h2></div>
+          <div class="stairs" id="stairs"></div>
+        </section>
+
+        <!-- 6 MONTHLY INCOME -->
+        <section class="slide" data-glow="580,-250,-250,600" aria-label="Monthly income">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Income plan · 01</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Monthly <span class="gold-text">Income</span></span></span></h2></div>
+          <div class="gauge" id="gauge">
+            <div class="read"><b class="gold-text a-pop" style="--d:1s">0.3% – 0.8%</b><span class="a-up" style="--d:1.3s">Monthly Income</span></div>
+            <div class="ends a-fade" style="--d:1.6s"><span>0.3%</span><span>0.8%</span></div>
+          </div>
+        </section>
+
+        <!-- 7 BOOSTER -->
+        <section class="slide" data-glow="100,-150,1200,500" aria-label="Booster income">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Income plan · 03</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Booster <span class="gold-text">Income</span></span></span></h2></div>
+          <div class="rocketbox glass a-zoom" style="--d:.4s"><svg class="burst" viewBox="0 0 520 520" id="burst"></svg><div class="rk2" data-i="rocket"></div><div class="lbl gold-text">Boost your income</div></div>
+          <div class="tiers" id="tiers"></div>
+        </section>
+
+        <!-- 8 LEVEL INCOME -->
+        <section class="slide" data-glow="1250,-200,-250,640" aria-label="Level income">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Income plan · 04 · ROI to ROI</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Level <span class="gold-text">Income</span></span></span></h2></div>
+          <div class="elig">
+            <div class="it glass a-left" style="--d:.5s"><div class="r1 gold-text">1st Direct</div><div class="r2">= 1st level open</div><div class="min">Minimum $3,000</div></div>
+            <div class="it glass a-left" style="--d:.7s"><div class="r1 gold-text">15 Directs</div><div class="r2">= 15 levels open</div></div>
+          </div>
+          <div class="lvl" id="lvl"></div>
+        </section>
+
+        <!-- 9 COMPANY PROFIT SHARING -->
+        <section class="slide" data-glow="1000,-50,-250,600" aria-label="Company profit sharing">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Income plan · 05</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Company <span class="gold-text">Profit Sharing</span></span></span></h2></div>
+          <div class="ach">
+            <div class="it glass a-up" style="--d:.5s"><div class="ic a-spin" style="--d:.7s" data-i="users"></div><div class="big gold-text" data-n="15">15</div><b>Directs</b></div>
+            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass a-up" style="--d:1.1s"><div class="ic a-spin" style="--d:1.3s" data-i="check"></div><b>After your<br>15th direct</b></div>
+            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1.6s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass top" style="--d:1.7s"><svg class="rays" viewBox="0 0 440 440" id="rays"></svg><div class="ic" style="position:relative" data-i="pie"></div><b class="gold-text" style="font-size:58px;position:relative">Company<br>Profit Sharing</b></div>
+          </div>
+        </section>
+
+        <!-- 10 PAYMENT & WITHDRAWAL -->
+        <section class="slide" data-glow="1300,-150,-250,640" aria-label="Payment and withdrawal">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Blockchain payment</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Payment &amp; <span class="gold-text">Withdrawal</span></span></span></h2></div>
+          <div class="wd">
+            <div class="it glass a-up" style="--d:.5s"><div class="tp"><small>Minimum withdrawal</small><div class="ic" data-i="down"></div></div><b class="gold-text" data-n="10" data-pre="$">$10</b></div>
+            <div class="it glass a-up" style="--d:.65s"><div class="tp"><small>Maximum withdrawal</small><div class="ic" data-i="up"></div></div><b class="gold-text" data-n="2500" data-pre="$">$2,500</b></div>
+            <div class="it glass a-up" style="--d:.8s"><div class="tp"><small>Withdrawal frequency</small><div class="ic" data-i="clock"></div></div><b class="gold-text"><span data-n="24">24</span> HRS</b></div>
+            <div class="it glass a-up" style="--d:.95s"><div class="tp"><small>Withdrawal charges</small><div class="ic" data-i="receipt"></div></div><b class="sm">Service charge</b></div>
+          </div>
+        </section>
+
+        <!-- 11 ID & LIMITS -->
+        <section class="slide" data-glow="580,-250,-250,600" aria-label="ID and limits">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Plan limits</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">ID &amp; <span class="gold-text">Limits</span></span></span></h2></div>
+          <div class="lim2">
+            <div class="it glass a-flip" style="--d:.45s"><b data-n="2.5" data-dec="1" data-suf="X">2.5X</b><span>Self ID</span></div>
+            <div class="it glass top a-flip" style="--d:.65s"><b class="gold-text" data-n="5" data-suf="X">5X</b><span>ID Limit</span></div>
+          </div>
+          <div class="flow">
+            <div class="it glass a-up" style="--d:1.2s"><div class="ic" data-i="trade"></div><b>Self ID earns 2.5X</b></div>
+            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1.5s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass a-up" style="--d:1.6s;border-color:rgba(246,227,176,.75)"><div class="ic" data-i="refresh"></div><b class="gold-text">After 2.5X, top-up is a must</b></div>
+            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1.9s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
+            <div class="it glass a-up" style="--d:2s"><div class="ic" data-i="layers"></div><b>ID limit up to 5X</b></div>
+          </div>
+        </section>
+
+        <!-- 12 COMPANY DETAILS -->
+        <section class="slide" data-glow="300,-250,1100,500" aria-label="MFT Syndicate company details">
+          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Company details</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s"><span class="gold-text">MFT Syndicate</span></span></span></h2></div>
+          <div class="about-text a-blur" style="--d:.5s"><strong>MFT Syndicate</strong> is the business partnership platform of the <strong>MFT group</strong>, working across nine business areas in <strong>India</strong> and the <strong>UAE</strong>.</div>
+          <div class="chips" id="chips"></div>
+          <div class="lic glass a-up" style="--d:1.6s"><div class="ic" data-i="shield"></div><div><b>Registered &amp; Licensed</b><span>Licence No. — to be added</span></div>
             <svg class="seal" viewBox="0 0 110 110"><defs><path id="sl" d="M55 55 m-42 0 a42 42 0 1 1 84 0 a42 42 0 1 1 -84 0"/></defs><circle cx="55" cy="55" r="52" fill="none" stroke="rgba(220,181,106,.5)" stroke-width="1.5"/><text><textPath href="#sl">VERIFIED ◆ LICENSED ◆ VERIFIED ◆ </textPath></text><path d="M44 56l8 8 15-17" fill="none" stroke="#f6e3b0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="offices">
             <div class="office glass a-right" style="--d:.7s"><div class="ic a-spin" style="--d:.9s" data-i="building"></div><div><small>Head Office · India</small><b>Panjim, Goa</b></div></div>
             <div class="office glass a-right" style="--d:.85s"><div class="ic a-spin" style="--d:1.05s" data-i="pin"></div><div><small>Karnataka Head Office</small><b>Bangalore</b></div></div>
             <div class="office glass a-right" style="--d:1s"><div class="ic a-spin" style="--d:1.2s" data-i="globe"></div><div><small>International Office</small><b>Dubai, UAE</b></div></div>
           </div>
-        </section>
-
-        <!-- 4 BUSINESS AREAS -->
-        <section class="slide" data-glow="1300,-250,-250,640" aria-label="Our business areas">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Where we work</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Our Business <span class="gold-text">Areas</span></span></span></h2></div>
-          <div class="biz" id="biz"></div>
-        </section>
-
-        <!-- 5 PACKAGES -->
-        <section class="slide" data-glow="800,-300,-250,600" aria-label="Packages">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Choose your package</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Investment <span class="gold-text">Packages</span></span></span></h2></div>
-          <div class="pk" id="pk"></div>
-          <div class="band glass a-wipe" style="--d:1.9s;--g:3s"><span>Total ROI limit</span><b class="gold-text" data-n="2.5" data-dec="1" data-suf="X">2.5X</b><span>of your package</span></div>
-        </section>
-
-        <!-- 6 INCOME PLAN -->
-        <section class="slide" data-glow="1250,-150,-200,600" aria-label="Income plan">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">How you earn</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Income <span class="gold-text">Plan</span></span></span></h2></div>
-          <div class="ip-col glass a-left" style="left:120px;width:820px;--d:.5s">
-            <h3><span class="ic" data-i="trade"></span>ROI Income</h3><div class="x gold-text a-pop" style="--d:1s">2.5X</div>
-            <ul class="ip-list">
-              <li class="a-up" style="--d:.8s"><i></i>Basic · $100<span>3%</span></li>
-              <li class="a-up" style="--d:.9s"><i></i>Silver · $300<span>3%</span></li>
-              <li class="a-up" style="--d:1s"><i></i>Gold · $3,000<span>4%</span></li>
-              <li class="a-up" style="--d:1.1s"><i></i>Platinum · $6,000<span>5%</span></li>
-              <li class="a-up" style="--d:1.2s"><i></i>Diamond · $10,000<span>6%</span></li>
-            </ul>
-          </div>
-          <div class="ip-col glass a-right" style="left:980px;width:820px;--d:.65s">
-            <h3><span class="ic" data-i="network"></span>Working Income</h3><div class="x gold-text a-pop" style="--d:1.15s">2.5X</div>
-            <ul class="ip-list">
-              <li class="a-up" style="--d:1s"><i></i>Booster Income<span>+2%</span></li>
-              <li class="a-up" style="--d:1.12s"><i></i>Level Income (ROI to ROI)<span>15 Levels</span></li>
-              <li class="a-up" style="--d:1.24s"><i></i>Profit Share<span>Achiever</span></li>
-            </ul>
-          </div>
-          <div class="eq a-up" style="--d:1.6s">ROI 2.5X <span class="gold-text">+</span> Working 2.5X <span class="gold-text">=</span> <span class="gold-text">Total 5X</span></div>
-        </section>
-
-        <!-- 7 BOOSTER -->
-        <section class="slide" data-glow="100,-150,1200,500" aria-label="Booster income">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Working income</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Booster <span class="gold-text">Income</span></span></span></h2></div>
-          <div class="big-num glass a-zoom" style="--d:.45s">
-            <svg class="burst" viewBox="0 0 520 520" id="burst"></svg>
-            <div class="n gold-text a-pop" style="--d:.8s" data-n="2" data-pre="+" data-suf="%">+2%</div>
-            <div class="l a-up" style="--d:1.1s">Extra Income</div><div class="s a-fade" style="--d:1.3s">on top of your ROI</div>
-          </div>
-          <div class="steps">
-            <div class="step glass a-right" style="--d:.8s"><div class="ic" data-i="target"></div><div><small>Target</small><b class="gold-text" data-n="20000" data-pre="$">$20,000</b></div></div>
-            <div class="step glass a-right" style="--d:1s"><div class="ic" data-i="cal"></div><div><small>Time</small><b>Within 1 week</b></div></div>
-            <div class="step glass a-right" style="--d:1.2s"><div class="ic"><span class="rk" data-i2="rocket"></span></div><div><small>Reward</small><b>2% extra income</b></div></div>
-          </div>
-        </section>
-
-        <!-- 8 LIMIT -->
-        <section class="slide" data-glow="580,-250,-250,600" aria-label="Income limit">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Plan limit</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Total Income <span class="gold-text">Limit</span></span></span></h2></div>
-          <div class="limit-hero glass a-flip" style="--d:.45s">
-            <div class="k"><b data-n="2.5" data-dec="1" data-suf="X" style="--d:.7s">2.5X</b><span>ROI</span></div><div class="op a-pop" style="--d:1s">+</div>
-            <div class="k"><b data-n="2.5" data-dec="1" data-suf="X" style="--d:1.1s">2.5X</b><span>Working</span></div><div class="op a-pop" style="--d:1.4s">=</div>
-            <div class="k a-zoom" style="--d:1.5s"><b class="gold-text" data-n="5" data-suf="X">5X</b><span>Total limit</span></div>
-          </div>
-          <div class="flow">
-            <div class="it glass a-up" style="--d:1.7s"><div class="ic" data-i="trade"></div><b>Earn up to 5X</b></div>
-            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:2s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
-            <div class="it glass a-up" style="--d:2.1s"><div class="ic" data-i="pause"></div><b>ID becomes inactive</b></div>
-            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:2.4s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
-            <div class="it glass a-up" style="--d:2.5s;border-color:rgba(246,227,176,.75)"><div class="ic" data-i="refresh"></div><b class="gold-text">Re-top-up is a must</b></div>
-          </div>
-        </section>
-
-        <!-- 9 LEVEL INCOME -->
-        <section class="slide" data-glow="1250,-200,-250,640" aria-label="Level income">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Working income</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Level <span class="gold-text">Income</span></span></span></h2></div>
-          <div class="lvl" id="lvl"></div>
-          <div class="side glass a-right" style="--d:.6s">
-            <div class="q gold-text">ROI to ROI</div>
-            <p>Earn a share of your team's ROI income — up to <strong style="color:var(--gold-hi)">15 levels</strong> deep.</p>
-            <svg class="net" viewBox="0 0 460 230" id="net"></svg>
-          </div>
-        </section>
-
-        <!-- 10 ELIGIBILITY -->
-        <section class="slide" data-glow="1300,-150,-250,640" aria-label="Level eligibility">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Unlock your levels</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Level <span class="gold-text">Eligibility</span></span></span></h2></div>
-          <div class="ladder" id="ladder"></div>
-          <div class="rules">
-            <div class="rule glass a-right" style="--d:.7s"><div class="r1 gold-text">1 Direct</div><div class="r2">= 1 level open</div></div>
-            <div class="rule glass a-right" style="--d:.9s"><div class="r1 gold-text">15 Directs</div><div class="r2">= 15 levels open</div></div>
-            <div class="rule glass note a-right" style="--d:1.1s"><div class="r1" style="font-size:52px">$100 Basic ID</div><div class="r2">Not valid</div></div>
-          </div>
-        </section>
-
-        <!-- 11 ACHIEVER -->
-        <section class="slide" data-glow="1000,-50,-250,600" aria-label="Profit share achiever">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Top reward</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Profit Share · <span class="gold-text">Achiever</span></span></span></h2></div>
-          <div class="ach">
-            <div class="it glass a-up" style="--d:.5s"><div class="ic a-spin" style="--d:.7s" data-i="users"></div><div class="big gold-text" data-n="15">15</div><b>Directs done</b></div>
-            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
-            <div class="it glass a-up" style="--d:1.1s"><div class="ic a-spin" style="--d:1.3s" data-i="pie"></div><b>Profit Share<br>Eligibility</b></div>
-            <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1.6s" d="M6 30h76M64 12l18 18-18 18"/></svg></div>
-            <div class="it glass top" style="--d:1.7s"><svg class="rays" viewBox="0 0 420 420" id="rays"></svg><div class="ic" style="position:relative" data-i="crown"></div><b class="gold-text" style="font-size:68px;position:relative">Achiever</b></div>
-          </div>
-        </section>
-
-        <!-- 12 TERMS -->
-        <section class="slide" data-glow="1300,-250,-250,600" aria-label="Key terms">
-          <div class="head"><div class="eyebrow a-left" style="--d:.1s">Please note</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Key <span class="gold-text">Terms</span></span></span></h2></div>
-          <div class="terms" id="terms"></div>
-          <div class="disc a-fade" style="--d:1.6s">All investments carry risk. Returns depend on business performance. Please read the full terms &amp; conditions before joining.</div>
+          <div class="disc a-fade" style="--d:1.8s">All investments carry risk. Returns depend on business performance. Please read the full terms &amp; conditions before joining.</div>
         </section>
 
         <!-- 13 THANK YOU -->
@@ -583,72 +577,81 @@ body { background: #040b1c; color: var(--ivory); font-family: var(--sans); overf
     $('#candles').innerHTML = s;
   })();
 
-  /* contents */
-  $('#toc').append(h(['About MFT Syndicate', 'Business Areas', 'Investment Packages', 'Income Plan', 'Booster Income', 'Income Limit', 'Level Income', 'Profit Share · Achiever']
-    .map((t, i) => `<div class="it glass a-${i < 4 ? 'up' : 'flip'}" style="--d:${D(.45 + i * .1)}s;--g:${D(1.4 + i * .1)}s"><svg class="ar" viewBox="0 0 24 24"><path d="M5 19L19 5M9 5h10v10"/></svg><em class="gold-text">0${i + 1}</em><b>${t}</b></div>`).join('')));
+  Object.assign(I, {
+    chain: '<rect x="2.5" y="8.5" width="9" height="7" rx="3.5"/><rect x="12.5" y="8.5" width="9" height="7" rx="3.5"/><path d="M9 12h6"/>',
+    infinity: '<path d="M12 12c-2-2.6-3.6-4-5.5-4a4 4 0 0 0 0 8c1.9 0 3.5-1.4 5.5-4zm0 0c2 2.6 3.6 4 5.5 4a4 4 0 0 0 0-8c-1.9 0-3.5 1.4-5.5 4z"/>',
+    check: '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>',
+    down: '<path d="M12 4v13M6.5 11.5L12 17l5.5-5.5"/><path d="M5 20.5h14"/>',
+    up: '<path d="M12 20V7M6.5 12.5L12 7l5.5 5.5"/><path d="M5 3.5h14"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+    receipt: '<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h4"/>',
+    payment: '<rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6 15h4"/>',
+    box: '<path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/>',
+  });
 
-  /* business areas */
-  $('#biz').append(h([['plane', 'Tourism'], ['cart', 'E-Commerce'], ['goldbar', 'Gold Bullion Trading'], ['currency', 'International Currency Trading'], ['ship', 'Import &amp; Export'],
-    ['tag', 'MFT Own Brand Products'], ['mine', 'Gold Mining'], ['trade', 'Forex Trading'], ['house', 'Real Estate']]
-    .map(([ic, t], i) => `<div class="it glass a-pop" style="--d:${D(.45 + i * .09)}s;--g:${D(1.3 + i * .09)}s"><div class="ic a-spin" style="--d:${D(.6 + i * .09)}s">${svgI(ic)}</div><b>${t}</b><em>0${i + 1}</em></div>`).join('')));
+  /* 2 details */
+  $('#det').append(h([['USDT Transaction', 'currency'], ['Packages', 'box'], ['Income Plan', 'trade'], ['Blockchain Payment', 'payment'],
+    ['Company Profit Sharing', 'pie'], ['Unlimited Earning Opportunity', 'infinity'], ['BSC Scan', 'chain']]
+    .map(([t, ic], i) => `<div class="it glass a-${i % 2 ? 'right' : 'left'}" style="--d:${D(.45 + i * .1)}s;--g:${D(1.4 + i * .1)}s"><em class="gold-text">0${i + 1}</em><b>${t}</b><div class="ic">${svgI(ic)}</div></div>`).join('')
+    + `<div class="it glass brandcell a-pop" style="--d:1.2s"><img src="logo.webp" alt=""><span>MFT Syndicate<br>Financial Freedom</span></div>`));
 
-  /* packages */
-  const TI = {
-    basic: ['#c98d55', '#f0c79a'], silver: ['#9aa7b8', '#eef2f7'], gold: ['#b8873f', '#f6e3b0'], platinum: ['#8fb3c9', '#e6f4fb'], diamond: ['#7fc6e8', '#ffffff'],
-  };
+  /* 4 packages table */
+  const TI = { basic: ['#c98d55', '#f0c79a'], silver: ['#9aa7b8', '#eef2f7'], gold: ['#b8873f', '#f6e3b0'], platinum: ['#8fb3c9', '#e6f4fb'], diamond: ['#7fc6e8', '#ffffff'] };
   const medal = (k) => { const [a, b] = TI[k]; return k === 'diamond'
     ? `<svg viewBox="0 0 74 74"><defs><linearGradient id="g${k}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${b}"/><stop offset="1" stop-color="${a}"/></linearGradient></defs><path d="M14 28l11-14h24l11 14-23 32z" fill="url(#g${k})" stroke="${b}" stroke-width="2" stroke-linejoin="round"/><path d="M14 28h46M25 14l12 46 12-46M30 28l7-14 7 14" fill="none" stroke="rgba(7,20,48,.45)" stroke-width="1.6"/></svg>`
     : `<svg viewBox="0 0 74 74"><defs><linearGradient id="g${k}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${b}"/><stop offset="1" stop-color="${a}"/></linearGradient></defs><path d="M26 6h22l-6 20H32z" fill="${a}" opacity=".8"/><circle cx="37" cy="44" r="24" fill="url(#g${k})" stroke="${b}" stroke-width="2"/><circle cx="37" cy="44" r="16" fill="none" stroke="rgba(7,20,48,.35)" stroke-width="2"/><path d="M37 34l3 6.5 7 .8-5.2 4.7 1.4 7-6.2-3.6-6.2 3.6 1.4-7-5.2-4.7 7-.8z" fill="rgba(7,20,48,.4)"/></svg>`; };
-  $('#pk').append(h([['Basic', 'basic', 100, 3], ['Silver', 'silver', 300, 3], ['Gold', 'gold', 3000, 4], ['Platinum', 'platinum', 6000, 5], ['Diamond', 'diamond', 10000, 6]]
-    .map(([n, k, a, r], i) => `<div class="it glass${i === 4 ? ' top' : ' a-up'}" style="--d:${D(.45 + i * .14)}s;--g:${D(1.6 + i * .12)}s">${i === 4 ? '<div class="badge">HIGHEST ROI</div>' : ''}
-      <div class="ti a-spin" style="--d:${D(.6 + i * .14)}s">${medal(k)}</div>
-      <div class="lv" style="color:${TI[k][1]}">${n}</div><div class="amt" data-n="${a}" data-pre="$" style="--d:${D(.7 + i * .14)}s">$${a.toLocaleString('en-US')}</div>
-      <div class="hr a-grow" style="--d:${D(.85 + i * .14)}s"></div><div class="roi gold-text" data-n="${r}" data-suf="%" style="--d:${D(1 + i * .14)}s">${r}%</div><div class="rl">ROI</div>
-      <div class="meter"><i class="a-grow" style="width:${r / 6 * 100}%;--d:${D(1.2 + i * .14)}s"></i></div></div>`).join('')));
+  $('#ptab').append(h(`<div class="row th a-down" style="--d:.4s"><span>Name</span><span>Package</span><span>Percentage</span></div>` +
+    [['Basic', 'basic', 100, 3], ['Silver', 'silver', 300, 3], ['Gold', 'gold', 3000, 4], ['Platinum', 'platinum', 6000, 5], ['Diamond', 'diamond', 10000, 6]]
+    .map(([n, k, a, r], i) => `<div class="row${i === 4 ? ' top' : ' a-left'}" style="--d:${D(.55 + i * .13)}s"><div class="nm"><span class="a-spin" style="display:grid;--d:${D(.7 + i * .13)}s">${medal(k)}</span><span style="color:${TI[k][1]}">${n}</span></div>
+      <div class="am" data-n="${a}" data-pre="$" style="--d:${D(.7 + i * .13)}s">$${a.toLocaleString('en-US')}</div><div class="pc gold-text" data-n="${r}" data-suf="%" style="--d:${D(.85 + i * .13)}s">${r}%</div>
+      <i class="bar a-grow" style="width:${(i + 1) * 20}%;--d:${D(1 + i * .13)}s"></i></div>`).join('')));
 
-  /* booster burst + achiever rays */
+  /* 5 income plan stairs */
+  (function () {
+    const T = [['Monthly Income', 'cal'], ['Direct Income', 'users'], ['Booster Income', 'rocket'], ['Level Income · ROI to ROI', 'layers'], ['Company Profit Sharing', 'pie']];
+    const H = [330, 390, 450, 520, 600];
+    let s = '', d = '';
+    T.forEach(([t, ic], i) => {
+      const x = i * 341;
+      s += `<div class="it glass${i === 4 ? ' top' : ''} a-up" style="left:${x}px;height:${H[i]}px;--d:${D(.45 + i * .16)}s;--g:${D(1.6 + i * .12)}s"><div class="ic a-spin" style="--d:${D(.6 + i * .16)}s">${svgI(ic)}</div><em class="gold-text">0${i + 1}</em><b>${t}</b></div>`;
+      d += `${i ? 'L' : 'M'} ${x + 158} ${700 - H[i] - 36} `;
+    });
+    s += `<svg class="path" viewBox="0 0 1680 700"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1.4s;animation-duration:1.6s" d="${d}"/></svg>`;
+    $('#stairs').innerHTML = s;
+  })();
+
+  /* 6 gauge */
+  (function () {
+    const cx = 550, cy = 520, r = 440, P = (v) => { const a = (180 - 180 * v) * Math.PI / 180; return [(cx + r * Math.cos(a)).toFixed(1), (cy - r * Math.sin(a)).toFixed(1)]; };
+    const arc = (v0, v1) => { const [x0, y0] = P(v0), [x1, y1] = P(v1); return `M ${x0} ${y0} A ${r} ${r} 0 0 1 ${x1} ${y1}`; };
+    let s = `<defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#a9793a"/><stop offset=".5" stop-color="#f6e3b0"/><stop offset="1" stop-color="#dcb56a"/></linearGradient></defs>`;
+    for (let k = 0; k <= 10; k++) { const a = (180 - 18 * k) * Math.PI / 180; s += `<line class="tick" x1="${(cx + (r + 40) * Math.cos(a)).toFixed(1)}" y1="${(cy - (r + 40) * Math.sin(a)).toFixed(1)}" x2="${(cx + (r + 62) * Math.cos(a)).toFixed(1)}" y2="${(cy - (r + 62) * Math.sin(a)).toFixed(1)}"/>`; }
+    s += `<path class="trk a-fade" style="--d:.4s" d="${arc(0, 1)}"/><path class="val a-draw" pathLength="1" stroke-dasharray="1" style="--d:.8s;animation-duration:1.6s" d="${arc(0, 1)}"/>`;
+    const g = $('#gauge'); g.insertAdjacentHTML('afterbegin', `<svg viewBox="0 0 1100 560">${s}</svg>`);
+  })();
+
+  /* 7 booster tiers */
+  $('#tiers').append(h([[100, .3], [10000, .7], [20000, .8]].map(([a, p], i) => `<div class="it glass${i === 2 ? ' top' : ''} a-right" style="--d:${D(.6 + i * .2)}s"><div><small>Direct business</small><b data-n="${a}" data-pre="$">$${a.toLocaleString('en-US')}</b></div>
+    <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:${D(.9 + i * .2)}s" d="M6 30h76M64 12l18 18-18 18"/></svg></div><div class="pc gold-text" data-n="${p}" data-dec="1" data-suf="%" style="--d:${D(1 + i * .2)}s">${p}%</div></div>`).join('')));
+
+  /* rays */
   const rays = (n, c, r1, r2) => { let s = ''; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; s += `<line x1="${(c + r1 * Math.cos(a)).toFixed(1)}" y1="${(c + r1 * Math.sin(a)).toFixed(1)}" x2="${(c + r2 * Math.cos(a)).toFixed(1)}" y2="${(c + r2 * Math.sin(a)).toFixed(1)}"/>`; } return s; };
   $('#burst').innerHTML = rays(36, 260, 170, 250);
-  $('#rays').innerHTML = rays(28, 210, 130, 200);
+  $('#rays').innerHTML = rays(28, 220, 140, 210);
 
-  /* level income */
+  /* 8 level income */
   const L = [['Level 1', 20], ['Level 2', 16], ['Level 3', 12], ['Level 4', 8], ['Level 5', 4], ['Level 6', 2], ['Level 7 – 10', 1], ['Level 11 – 15', .5]];
-  $('#lvl').append(h(L.map(([n, p], i) => `<div class="row${i === 0 ? ' hd' : ''} a-left" style="--d:${D(.45 + i * .09)}s"><b>${n}</b><div class="tr"><i class="a-grow" style="width:${Math.max(3, p / 20 * 100)}%;--d:${D(.75 + i * .09)}s"></i></div><span data-n="${p}" data-dec="${p % 1 ? 1 : 0}" data-suf="%" style="--d:${D(.75 + i * .09)}s">${p}%</span></div>`).join('')));
+  $('#lvl').append(h(L.map(([n, p], i) => `<div class="row${i === 0 ? ' hd' : ''} a-right" style="--d:${D(.45 + i * .09)}s"><b>${n}</b><div class="tr"><i class="a-grow" style="width:${Math.max(3, p / 20 * 100)}%;--d:${D(.75 + i * .09)}s"></i></div><span data-n="${p}" data-dec="${p % 1 ? 1 : 0}" data-suf="%" style="--d:${D(.75 + i * .09)}s">${p}%</span></div>`).join('')));
 
-  /* team network on level slide */
-  (function () {
-    const lv = [[110, 110], [350, 110]], lv2 = [[40, 200], [170, 200], [290, 200], [420, 200]];
-    let s = '';
-    lv.forEach(([x, y], i) => s += `<line class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:${D(1.2 + i * .1)}s" x1="230" y1="30" x2="${x}" y2="${y}"/>`);
-    lv2.forEach(([x, y], i) => { const p = lv[i < 2 ? 0 : 1]; s += `<line class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:${D(1.5 + i * .1)}s" x1="${p[0]}" y1="${p[1]}" x2="${x}" y2="${y}"/>`; });
-    [[230, 30], ...lv, ...lv2].forEach(([x, y], i) => s += `<circle class="a-pop" style="--d:${D(1.1 + i * .12)}s;transform-origin:${x}px ${y}px" cx="${x}" cy="${y}" r="${i ? (i < 3 ? 16 : 12) : 22}"/>`);
-    $('#net').innerHTML = s;
-  })();
-
-  /* ladder 1..15 */
-  (function () {
-    let s = '', d = '';
-    for (let i = 1; i <= 15; i++) {
-      const x = (i - 1) * 70, hh = 40 + i * 31;
-      s += `<div class="st a-growy" style="left:${x}px;height:${hh}px;opacity:${(.45 + i * .037).toFixed(2)};--d:${D(.45 + i * .07)}s"><b class="a-pop" style="--d:${D(.9 + i * .07)}s">${i}</b></div>`;
-      d += `${i === 1 ? 'M' : 'L'} ${x + 29} ${560 - hh - 62} `;
-    }
-    s += `<svg class="lk" viewBox="0 0 1100 560"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:1.7s;animation-duration:1.8s" d="${d}"/></svg>`;
-    s += `<div class="cap a-fade" style="--d:1.8s"><span>1 direct</span><span>15 directs</span></div>`;
-    $('#ladder').innerHTML = s;
-  })();
-
-  /* terms */
-  $('#terms').append(h([['trade', 'ROI income is limited to <strong>2.5X</strong> of the package'], ['layers', 'Total income limit is <strong>5X</strong> — then the ID becomes inactive'],
-    ['refresh', '<strong>Re-top-up</strong> is a must to continue earning'], ['network', 'Levels open by directs: <strong>1 direct = 1 level</strong>'],
-    ['user', '<strong>$100 Basic ID</strong> not valid'], ['shield', 'Registered &amp; licensed · <strong>Licence No. to be added</strong>']]
-    .map(([ic, t], i) => `<div class="it glass a-${i % 2 ? 'right' : 'left'}" style="--d:${D(.45 + i * .12)}s;--g:${D(1.4 + i * .1)}s"><div class="ic">${svgI(ic)}</div><b>${t}</b></div>`).join('')));
+  /* 12 business chips */
+  $('#chips').innerHTML = [['plane', 'Tourism'], ['cart', 'E-Commerce'], ['goldbar', 'Gold Bullion Trading'], ['currency', 'International Currency Trading'], ['ship', 'Import &amp; Export'],
+    ['tag', 'MFT Own Branding'], ['mine', 'Gold Mining'], ['trade', 'Forex Trading'], ['house', 'Real Estate']]
+    .map(([ic, t], i) => `<span class="a-pop" style="--d:${D(.8 + i * .07)}s"><svg class="sv" viewBox="0 0 24 24">${I[ic]}</svg>${t}</span>`).join('');
 
   /* confetti */
   $('#confetti').innerHTML = Array.from({ length: 34 }, (_, i) => `<i style="left:${(i * 57 + 23) % 1900}px;--d:${D(1 + (i * .37) % 4)}s;--t:${D(4 + (i % 5) * .8)}s;--r:${(i % 2 ? 1 : -1) * (360 + i * 20)}deg;width:${10 + i % 3 * 4}px"></i>`).join('');
 
   document.querySelectorAll('[data-i]').forEach(el => el.innerHTML = svgI(el.dataset.i));
-  document.querySelectorAll('[data-i2]').forEach(el => el.innerHTML = svgI(el.dataset.i2));
 
   /* gold dust + spinning coins */
   (function () {
