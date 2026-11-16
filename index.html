@@ -407,7 +407,7 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
           </div>
           <div class="feat">
             <div class="it glass a-right" style="--d:.7s"><div class="ic" data-i="currency"></div><div><small>Transactions</small><b>USDT Payment</b></div></div>
-            <div class="it glass a-right" style="--d:.9s"><div class="ic" data-i="chain"></div><div><small>Blockchain</small><b>BSC Scan</b></div></div>
+            <div class="it glass a-right" style="--d:.9s"><div class="ic" data-i="chain"></div><div><small>Blockchain</small><b>BSCSCAN</b></div></div>
             <div class="it glass a-right" style="--d:1.1s;border-color:rgba(246,227,176,.75)"><div class="ic" data-i="infinity"></div><div><small>Growth</small><b class="gold-text">Unlimited Earning Opportunity</b></div></div>
           </div>
         </section>
@@ -593,7 +593,7 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
 
   /* 2 details */
   $('#det').append(h([['USDT Transaction', 'currency'], ['Packages', 'box'], ['Income Plan', 'trade'], ['Blockchain Payment', 'payment'],
-    ['Company Profit Sharing', 'pie'], ['Unlimited Earning Opportunity', 'infinity'], ['BSC Scan', 'chain']]
+    ['Company Profit Sharing', 'pie'], ['Unlimited Earning Opportunity', 'infinity'], ['BSCSCAN', 'chain']]
     .map(([t, ic], i) => `<div class="it glass a-${i % 2 ? 'right' : 'left'}" style="--d:${D(.45 + i * .1)}s;--g:${D(1.4 + i * .1)}s"><em class="gold-text">0${i + 1}</em><b>${t}</b><div class="ic">${svgI(ic)}</div></div>`).join('')
     + `<div class="it glass brandcell a-pop" style="--d:1.2s"><img src="logo.webp" alt=""><span>MFT Syndicate<br>Financial Freedom</span></div>`));
 
