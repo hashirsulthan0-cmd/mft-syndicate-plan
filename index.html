@@ -235,10 +235,10 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
 .rocketbox .wk span { display: block; margin-top: 6px; font: 800 26px var(--sans); letter-spacing: .3em; text-transform: uppercase; }
 .rocketbox .lbl { position: absolute; bottom: 40px; font: 800 40px var(--display); text-transform: uppercase; letter-spacing: .06em; }
 .tiers { position: absolute; left: 740px; right: 120px; top: 300px; height: 640px; display: flex; flex-direction: column; justify-content: center; gap: 40px; }
-.tiers .it { height: 340px; display: grid; grid-template-columns: 1fr 90px 300px; align-items: center; padding: 0 40px; }
-.tiers .it small { display: block; font: 700 30px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
-.tiers .it b { display: block; margin-top: 14px; font: 900 120px/1 var(--display); font-variant-numeric: tabular-nums; }
-.tiers .it .pc { text-align: right; font: 900 160px/1 var(--display); font-variant-numeric: tabular-nums; }
+.tiers .it { height: 340px; display: grid; grid-template-columns: 1fr 80px 330px; align-items: center; padding: 0 40px; }
+.tiers .it small { display: block; white-space: nowrap; font: 700 26px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.tiers .it b { display: block; margin-top: 14px; font: 900 112px/1 var(--display); font-variant-numeric: tabular-nums; }
+.tiers .it .pc { text-align: right; font: 900 128px/1 var(--display); font-variant-numeric: tabular-nums; }
 .tiers .it.top { border-color: rgba(246,227,176,.85); background: linear-gradient(90deg, rgba(220,181,106,.24), rgba(220,181,106,.05)); }
 
 /* ================= 8 level income ================= */
@@ -484,8 +484,8 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
           <div class="head"><div class="eyebrow a-left" style="--d:.1s">Blockchain payment</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Payment &amp; <span class="gold-text">Withdrawal</span></span></span></h2></div>
           <div class="wd">
             <div class="it glass a-up" style="--d:.5s"><div class="tp"><small>Minimum withdrawal</small><div class="ic" data-i="down"></div></div><b class="gold-text" data-n="10" data-pre="$">$10</b></div>
-            <div class="it glass a-up" style="--d:.62s"><div class="tp"><small>Maximum withdrawal</small><div class="ic" data-i="up"></div></div><b class="gold-text" data-n="4000" data-pre="$">$4,000</b></div>
-            <div class="it glass a-up" style="--d:.74s"><div class="tp"><small>Withdrawal frequency</small><div class="ic" data-i="clock"></div></div><div><b class="gold-text"><span data-n="24">24</span> HRS</b><div class="subv">$4,000 in 24 hours</div></div></div>
+            <div class="it glass a-up" style="--d:.62s"><div class="tp"><small>Maximum withdrawal</small><div class="ic" data-i="up"></div></div><b class="gold-text" data-n="5000" data-pre="$">$5,000</b></div>
+            <div class="it glass a-up" style="--d:.74s"><div class="tp"><small>Withdrawal frequency</small><div class="ic" data-i="clock"></div></div><div><b class="gold-text"><span data-n="24">24</span> HRS</b><div class="subv">$5,000 in 24 hours</div></div></div>
             <div class="it glass a-up" style="--d:.86s"><div class="tp"><small>Service charge</small><div class="ic" data-i="receipt"></div></div><b class="gold-text"><span data-n="10">10</span>%</b></div>
             <div class="it glass a-up" style="--d:.98s"><div class="tp"><small>P2P charges</small><div class="ic" data-i="swap"></div></div><b class="gold-text"><span data-n="0">0</span>%</b></div>
             <div class="it glass top a-up" style="--d:1.1s"><div class="tp"><small>Withdrawal open</small><div class="ic" data-i="unlock"></div></div><b class="gold-text sm">24 Hours</b></div>
@@ -654,7 +654,7 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
 
   /* 7 booster tiers */
   $('#tiers').append(h([[20000, 2]].map(([a, p], i) => `<div class="it glass top a-right" style="--d:${D(.6 + i * .2)}s"><div><small>Direct business · in 1 week</small><b data-n="${a}" data-pre="$">$${a.toLocaleString('en-US')}</b></div>
-    <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:${D(.9 + i * .2)}s" d="M6 30h76M64 12l18 18-18 18"/></svg></div><div class="pc gold-text" data-n="${p}" data-suf="%" style="--d:${D(1 + i * .2)}s">${p}%</div></div>`).join('')));
+    <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:${D(.9 + i * .2)}s" d="M6 30h76M64 12l18 18-18 18"/></svg></div><div class="pc gold-text" data-n="${p}" data-pre="+" data-suf="%" style="--d:${D(1 + i * .2)}s">+${p}%</div></div>`).join('')));
 
   /* rays */
   const rays = (n, c, r1, r2) => { let s = ''; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; s += `<line x1="${(c + r1 * Math.cos(a)).toFixed(1)}" y1="${(c + r1 * Math.sin(a)).toFixed(1)}" x2="${(c + r2 * Math.cos(a)).toFixed(1)}" y2="${(c + r2 * Math.sin(a)).toFixed(1)}"/>`; } return s; };
