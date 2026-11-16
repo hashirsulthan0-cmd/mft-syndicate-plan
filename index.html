@@ -228,8 +228,11 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
 .rocketbox { position: absolute; left: 120px; top: 300px; width: 560px; height: 640px; display: grid; place-items: center; }
 .rocketbox .burst { position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; margin: -260px 0 0 -260px; animation: rot 30s linear infinite; opacity: .55; }
 .rocketbox .burst line { stroke: rgba(246,227,176,.35); stroke-width: 2; stroke-linecap: round; }
-.rocketbox .rk2 { position: relative; width: 300px; height: 300px; animation: bob 2.6s ease-in-out infinite; }
+.rocketbox .rk2 { position: relative; width: 260px; height: 260px; margin-top: -120px; animation: bob 2.6s ease-in-out infinite; }
 .rocketbox .rk2 svg { width: 100%; height: 100%; fill: none; stroke: var(--teal-hi); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 20px rgba(246,227,176,.5)); }
+.rocketbox .wk { position: absolute; bottom: 34px; left: 40px; right: 40px; padding: 18px 20px; border-radius: 24px; text-align: center; background: linear-gradient(100deg, #1a9e92, #2fd6c3 55%, #a5fff2); color: #04110f; box-shadow: 0 14px 40px rgba(47,214,195,.35); }
+.rocketbox .wk b { display: block; font: 900 50px/1 var(--display); text-transform: uppercase; }
+.rocketbox .wk span { display: block; margin-top: 6px; font: 800 26px var(--sans); letter-spacing: .3em; text-transform: uppercase; }
 .rocketbox .lbl { position: absolute; bottom: 40px; font: 800 40px var(--display); text-transform: uppercase; letter-spacing: .06em; }
 .tiers { position: absolute; left: 740px; right: 120px; top: 300px; display: flex; flex-direction: column; gap: 26px; }
 .tiers .it { height: 196px; display: grid; grid-template-columns: 1fr 90px 220px; align-items: center; padding: 0 40px; }
@@ -436,7 +439,7 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
         <!-- 7 BOOSTER -->
         <section class="slide" data-glow="100,-150,1200,500" aria-label="Booster income">
           <div class="head"><div class="eyebrow a-left" style="--d:.1s">Income plan · 03</div><h2 class="h2"><span class="ln"><span class="a-rise" style="--d:.25s">Booster <span class="gold-text">Income</span></span></span></h2></div>
-          <div class="rocketbox glass a-zoom" style="--d:.4s"><svg class="burst" viewBox="0 0 520 520" id="burst"></svg><div class="rk2" data-i="rocket"></div><div class="lbl gold-text">Boost your income</div></div>
+          <div class="rocketbox glass a-zoom" style="--d:.4s"><svg class="burst" viewBox="0 0 520 520" id="burst"></svg><div class="rk2" data-i="rocket"></div><div class="wk a-pop" style="--d:1.2s"><b>Within 1 week</b><span>only</span></div></div>
           <div class="tiers" id="tiers"></div>
         </section>
 
@@ -470,7 +473,7 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
             <div class="it glass a-up" style="--d:.5s"><div class="tp"><small>Minimum withdrawal</small><div class="ic" data-i="down"></div></div><b class="gold-text" data-n="10" data-pre="$">$10</b></div>
             <div class="it glass a-up" style="--d:.65s"><div class="tp"><small>Maximum withdrawal</small><div class="ic" data-i="up"></div></div><b class="gold-text" data-n="2500" data-pre="$">$2,500</b></div>
             <div class="it glass a-up" style="--d:.8s"><div class="tp"><small>Withdrawal frequency</small><div class="ic" data-i="clock"></div></div><b class="gold-text"><span data-n="24">24</span> HRS</b></div>
-            <div class="it glass a-up" style="--d:.95s"><div class="tp"><small>Withdrawal charges</small><div class="ic" data-i="receipt"></div></div><b class="sm">Service charge</b></div>
+            <div class="it glass a-up" style="--d:.95s"><div class="tp"><small>Withdrawal service charge</small><div class="ic" data-i="receipt"></div></div><b class="gold-text"><span data-n="1">1</span>%</b></div>
           </div>
         </section>
 
@@ -633,7 +636,7 @@ body { background: #030406; color: var(--ivory); font-family: var(--sans); overf
   })();
 
   /* 7 booster tiers */
-  $('#tiers').append(h([[100, .3], [10000, .7], [20000, .8]].map(([a, p], i) => `<div class="it glass${i === 2 ? ' top' : ''} a-right" style="--d:${D(.6 + i * .2)}s"><div><small>Direct business</small><b data-n="${a}" data-pre="$">$${a.toLocaleString('en-US')}</b></div>
+  $('#tiers').append(h([[100, .3], [10000, .7], [20000, .8]].map(([a, p], i) => `<div class="it glass${i === 2 ? ' top' : ''} a-right" style="--d:${D(.6 + i * .2)}s"><div><small>Direct business · in 1 week</small><b data-n="${a}" data-pre="$">$${a.toLocaleString('en-US')}</b></div>
     <div class="arw"><svg viewBox="0 0 90 60"><path class="a-draw" pathLength="1" stroke-dasharray="1" style="--d:${D(.9 + i * .2)}s" d="M6 30h76M64 12l18 18-18 18"/></svg></div><div class="pc gold-text" data-n="${p}" data-dec="1" data-suf="%" style="--d:${D(1 + i * .2)}s">${p}%</div></div>`).join('')));
 
   /* rays */
